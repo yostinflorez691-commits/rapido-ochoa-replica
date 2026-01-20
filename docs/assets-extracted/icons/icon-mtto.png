@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-CO" prefix="og: https://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://wordpress-rochoa-production.onrender.com/xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+	
+	<title>No se encontró la página &#8211; Rápido Ochoa</title>
+
+		<!-- All in One SEO 4.5.0 - aioseo.com -->
+		<meta name="robots" content="noindex" />
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.0" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/uploads\/2020\/12\/icon-mtto.png\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/wordpress-rochoa-production.onrender.com\/#listItem","position":1,"name":"Inicio","item":"https:\/\/wordpress-rochoa-production.onrender.com\/","nextItem":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/uploads\/2020\/12\/icon-mtto.png\/#listItem"},{"@type":"ListItem","@id":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/uploads\/2020\/12\/icon-mtto.png\/#listItem","position":2,"name":"No se ha encontrado","previousItem":"https:\/\/wordpress-rochoa-production.onrender.com\/#listItem"}]},{"@type":"Organization","@id":"https:\/\/wordpress-rochoa-production.onrender.com\/#organization","name":"R\u00e1pido Ochoa","url":"https:\/\/wordpress-rochoa-production.onrender.com\/"},{"@type":"WebPage","@id":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/uploads\/2020\/12\/icon-mtto.png\/#webpage","url":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/uploads\/2020\/12\/icon-mtto.png\/","inLanguage":"es-CO","isPartOf":{"@id":"https:\/\/wordpress-rochoa-production.onrender.com\/#website"},"breadcrumb":{"@id":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/uploads\/2020\/12\/icon-mtto.png\/#breadcrumblist"}},{"@type":"WebSite","@id":"https:\/\/wordpress-rochoa-production.onrender.com\/#website","url":"https:\/\/wordpress-rochoa-production.onrender.com\/","name":"R\u00e1pido Ochoa","description":"Encuentra tiquetes de bus de R\u00e1pido Ochoa","inLanguage":"es-CO","publisher":{"@id":"https:\/\/wordpress-rochoa-production.onrender.com\/#organization"}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<link rel="alternate" type="application/rss+xml" title="Rápido Ochoa &raquo; Feed" href="https://wordpress-rochoa-production.onrender.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Rápido Ochoa &raquo; RSS de los comentarios" href="https://wordpress-rochoa-production.onrender.com/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.21.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+		<!-- Nota: MonsterInsights no está actualmente configurado en este sitio. El dueño del sitio necesita identificarse usando su cuenta de Google Analytics en el panel de ajustes de MonsterInsights. -->
+					<!-- No tracking code set -->
+				<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.7"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<meta content="Divi v.4.5.1" name="generator"/><style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://static.rapidoochoa.com.co/wp-includes/css/dist/block-library/style.min.css?ver=6.4.7' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://static.rapidoochoa.com.co/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-css' href='https://static.rapidoochoa.com.co/wp-content/themes/Divi/style.css?ver=4.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://static.rapidoochoa.com.co/wp-includes/css/dashicons.min.css?ver=6.4.7' type='text/css' media='all' />
+        <script>
+            /* <![CDATA[ */
+            var rcewpp = {
+                "ajax_url":"https://wordpress-rochoa-production.onrender.com/wp-admin/admin-ajax.php",
+                "nonce": "0dc2ee5a89",
+                "home_url": "https://wordpress-rochoa-production.onrender.com/",
+                "settings_icon": 'https://static.rapidoochoa.com.co/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
+                "settings_hover_icon": 'https://static.rapidoochoa.com.co/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
+            };
+            /* ]]\> */
+        </script>
+        <script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-content/themes/Divi/core/admin/js/es6-promise.auto.min.js?ver=6.4.7" id="es6-promise-js"></script>
+<script type="text/javascript" id="et-core-api-spam-recaptcha-js-extra">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"","page_action":{"action":""}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-content/themes/Divi/core/admin/js/recaptcha.js?ver=6.4.7" id="et-core-api-spam-recaptcha-js"></script>
+<link rel="https://api.w.org/" href="https://wordpress-rochoa-production.onrender.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wordpress-rochoa-production.onrender.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4.7" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K5JVSQ6');</script>
+<!-- End Google Tag Manager -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MHZZBN2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Ads: 300789646 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-300789646"></script> <script>
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(
+arguments);} gtag('js', new Date()); gtag('config', 'AW-300789646');
+</script>
+
+<!-- Route component -->
+<link rel="stylesheet" href="https://widgets.reservamos.mx/route-component/0.1.2/styles/bundle.css">
+<script defer type="module" src="https://widgets.reservamos.mx/route-component/0.1.2/module/main.js"></script>
+
+<!-- Search widget -->
+<link rel="stylesheet" href="https://widgets.reservamos.mx/search/5.8.0/search.css">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://widgets.reservamos.mx/search/5.8.0/search.js" defer></script>
+
+<!-- Mixpanel -->
+<script type="text/javascript">(function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
+
+var isDesktop = window.matchMedia('only screen and (min-width: 641px)').matches;
+
+mixpanel.init("78a8eff16bcffa26d4f029f4efac2f46", {
+  loaded: () => {
+	const mixEvent = new CustomEvent("MixpanelReady");
+	window.dispatchEvent(mixEvent);
+	mixpanel.track('Interest In Home', { product: isDesktop ? 'web' : 'web-mobile' });
+  },
+});
+</script>
+
+<!-- Track encomiendas clicks in GA -->
+<script>
+  $(document).ready(function () {
+    var encomiendasButtonLink = document.getElementById(
+      'encomiendas-button-link'
+    );
+
+    if (encomiendasButtonLink) {
+      encomiendasButtonLink.addEventListener('click', function () {
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'Outbound Links',
+            action: 'Encomiendas Click',
+            label: 'Button',
+            value: 0,
+          });
+        }
+      });
+    }
+
+    var encomiendasMenuLink = document.getElementById('menu-item-1183');
+
+    if (encomiendasMenuLink) {
+      encomiendasMenuLink.addEventListener('click', function () {
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'Outbound Links',
+            action: 'Encomiendas Click',
+            label: 'Header',
+            value: 0,
+          });
+        }
+      });
+    }
+  });
+</script>
+<!-- End Track encomiendas clicks in GA -->
+<link rel="icon" href="https://static.rapidoochoa.com.co/wp-content/uploads/2024/10/cropped-LOGO-RAPIDO-OCHOA-CURVAS-04-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://static.rapidoochoa.com.co/wp-content/uploads/2024/10/cropped-LOGO-RAPIDO-OCHOA-CURVAS-04-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://static.rapidoochoa.com.co/wp-content/uploads/2024/10/cropped-LOGO-RAPIDO-OCHOA-CURVAS-04-180x180.png" />
+<meta name="msapplication-TileImage" content="https://static.rapidoochoa.com.co/wp-content/uploads/2024/10/cropped-LOGO-RAPIDO-OCHOA-CURVAS-04-270x270.png" />
+<style id="et-divi-customizer-global-cached-inline-styles">body{color:#1e1e1e}h1,h2,h3,h4,h5,h6{color:#1e1e1e}.woocommerce #respond input#submit,.woocommerce-page #respond input#submit,.woocommerce #content input.button,.woocommerce-page #content input.button,.woocommerce-message,.woocommerce-error,.woocommerce-info{background:#1f8641!important}#et_search_icon:hover,.mobile_menu_bar:before,.mobile_menu_bar:after,.et_toggle_slide_menu:after,.et-social-icon a:hover,.et_pb_sum,.et_pb_pricing li a,.et_pb_pricing_table_button,.et_overlay:before,.entry-summary p.price ins,.woocommerce div.product span.price,.woocommerce-page div.product span.price,.woocommerce #content div.product span.price,.woocommerce-page #content div.product span.price,.woocommerce div.product p.price,.woocommerce-page div.product p.price,.woocommerce #content div.product p.price,.woocommerce-page #content div.product p.price,.et_pb_member_social_links a:hover,.woocommerce .star-rating span:before,.woocommerce-page .star-rating span:before,.et_pb_widget li a:hover,.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,.et_pb_gallery .et_pb_gallery_pagination ul li a.active,.wp-pagenavi span.current,.wp-pagenavi a:hover,.nav-single a,.tagged_as a,.posted_in a{color:#1f8641}.et_pb_contact_submit,.et_password_protected_form .et_submit_button,.et_pb_bg_layout_light .et_pb_newsletter_button,.comment-reply-link,.form-submit .et_pb_button,.et_pb_bg_layout_light .et_pb_promo_button,.et_pb_bg_layout_light .et_pb_more_button,.woocommerce a.button.alt,.woocommerce-page a.button.alt,.woocommerce button.button.alt,.woocommerce button.button.alt.disabled,.woocommerce-page button.button.alt,.woocommerce-page button.button.alt.disabled,.woocommerce input.button.alt,.woocommerce-page input.button.alt,.woocommerce #respond input#submit.alt,.woocommerce-page #respond input#submit.alt,.woocommerce #content input.button.alt,.woocommerce-page #content input.button.alt,.woocommerce a.button,.woocommerce-page a.button,.woocommerce button.button,.woocommerce-page button.button,.woocommerce input.button,.woocommerce-page input.button,.et_pb_contact p input[type="checkbox"]:checked+label i:before,.et_pb_bg_layout_light.et_pb_module.et_pb_button{color:#1f8641}.footer-widget h4{color:#1f8641}.et-search-form,.nav li ul,.et_mobile_menu,.footer-widget li:before,.et_pb_pricing li:before,blockquote{border-color:#1f8641}.et_pb_counter_amount,.et_pb_featured_table .et_pb_pricing_heading,.et_quote_content,.et_link_content,.et_audio_content,.et_pb_post_slider.et_pb_bg_layout_dark,.et_slide_in_menu_container,.et_pb_contact p input[type="radio"]:checked+label i:before{background-color:#1f8641}a{color:#508d41}.nav li ul{border-color:#2ea3f2}#main-header .nav li ul a{color:rgba(0,0,0,0.7)}#footer-widgets .footer-widget a,#footer-widgets .footer-widget li a,#footer-widgets .footer-widget li a:hover{color:#ffffff}.footer-widget{color:#ffffff}.footer-widget .et_pb_widget div,.footer-widget .et_pb_widget ul,.footer-widget .et_pb_widget ol,.footer-widget .et_pb_widget label{line-height:1.7em}#et-footer-nav .bottom-nav li.current-menu-item a{color:#2ea3f2}body .et_pb_button:hover,.woocommerce a.button.alt:hover,.woocommerce-page a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce button.button.alt.disabled:hover,.woocommerce-page button.button.alt:hover,.woocommerce-page button.button.alt.disabled:hover,.woocommerce input.button.alt:hover,.woocommerce-page input.button.alt:hover,.woocommerce #respond input#submit.alt:hover,.woocommerce-page #respond input#submit.alt:hover,.woocommerce #content input.button.alt:hover,.woocommerce-page #content input.button.alt:hover,.woocommerce a.button:hover,.woocommerce-page a.button:hover,.woocommerce button.button:hover,.woocommerce-page button.button:hover,.woocommerce input.button:hover,.woocommerce-page input.button:hover,.woocommerce #respond input#submit:hover,.woocommerce-page #respond input#submit:hover,.woocommerce #content input.button:hover,.woocommerce-page #content input.button:hover{border-radius:0px}body #page-container .et_slide_in_menu_container{background:#2ea3f2}@media only screen and (min-width:981px){.et_header_style_centered.et_hide_primary_logo #main-header:not(.et-fixed-header) .logo_container,.et_header_style_centered.et_hide_fixed_logo #main-header.et-fixed-header .logo_container{height:11.88px}}@media only screen and (min-width:1350px){.et_pb_row{padding:27px 0}.et_pb_section{padding:54px 0}.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper{padding-top:81px}.et_pb_fullwidth_section{padding:0}}	h1,h2,h3,h4,h5,h6{font-family:'Roboto',Helvetica,Arial,Lucida,sans-serif}body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-serif}.form-row{display:flex;margin-bottom:20px}.form-row-item{flex:1;margin-right:20px}.form-row-item:last-child{margin-right:0}.form-row-item input,.form-row-item textarea{width:100%;min-height:50px;background-color:#fafafa;border-radius:4px;border:1px solid #e6e6e6}.form-row-item input[type=submit]{color:#508d41;border-radius:4px;font-size:16px;border:solid 2px #508d41;padding:5px 10px;background-color:white;width:auto;min-height:40px;transition:all .2s}.form-row-item input[type=submit]:hover{background-color:#508d41;color:white;cursor:pointer}@media (max-width:980px){.form-row{flex-direction:column}.form-row-item{margin-right:0;margin-bottom:20px}.form-row-item:last-child{margin-bottom:0}.picker__holder{bottom:unset!important}}</style></head>
+<body data-rsssl=1 class="error404 et-tb-has-template et-tb-has-header et-tb-has-footer et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db et_minified_js et_minified_css">
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5JVSQ6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<div id="page-container">
+<div id="et-boc" class="et-boc">
+			
+		<header class="et-l et-l--header">
+			<div class="et_builder_inner_content et_pb_gutters3"><div class="et_pb_section et_pb_section_0_tb_header et_pb_fullwidth_section et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_module et_pb_fullwidth_menu et_pb_fullwidth_menu_0_tb_header et_pb_bg_layout_dark  et_pb_text_align_right et_dropdown_animation_fade et_pb_fullwidth_menu--with-logo et_pb_fullwidth_menu--style-left_aligned">
+					
+					
+					<div class="et_pb_row clearfix">
+						<div class="et_pb_menu__logo-wrap">
+			  <div class="et_pb_menu__logo">
+				<a href="https://wordpress-rochoa-production.onrender.com/" ><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2020/09/logo-300.png" alt="" /></a>
+			  </div>
+			</div>
+						<div class="et_pb_menu__wrap">
+							<div class="et_pb_menu__menu">
+								<nav class="et-menu-nav fullwidth-menu-nav"><ul id="menu-header" class="et-menu fullwidth-menu nav downwards"><li id="menu-item-183" class="et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-183"><a href="https://wordpress-rochoa-production.onrender.com/">Inicio</a></li>
+<li id="menu-item-186" class="et_pb_menu_page_id-122 menu-item menu-item-type-post_type menu-item-object-page menu-item-186"><a href="https://wordpress-rochoa-production.onrender.com/nosotros/">Nosotros</a></li>
+<li id="menu-item-1179" class="et_pb_menu_page_id-1179 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1179"><a href="#">Pasajes</a>
+<ul class="sub-menu">
+	<li id="menu-item-1180" class="et_pb_menu_page_id-299 menu-item menu-item-type-post_type menu-item-object-page menu-item-1180"><a href="https://wordpress-rochoa-production.onrender.com/politicas-de-viaje/">Políticas de viaje</a></li>
+	<li id="menu-item-2754" class="et_pb_menu_page_id-2749 menu-item menu-item-type-post_type menu-item-object-page menu-item-2754"><a href="https://wordpress-rochoa-production.onrender.com/recorrido-virtual-360/">Recorrido virtual 360</a></li>
+	<li id="menu-item-2003" class="et_pb_menu_page_id-1978 menu-item menu-item-type-post_type menu-item-object-page menu-item-2003"><a href="https://wordpress-rochoa-production.onrender.com/condiciones-promociones/">Condiciones y restricciones</a></li>
+</ul>
+</li>
+<li id="menu-item-1317" class="et_pb_menu_page_id-1053 menu-item menu-item-type-post_type menu-item-object-page menu-item-1317"><a href="https://wordpress-rochoa-production.onrender.com/mas-rapido-2/">Más Rápido</a></li>
+<li id="menu-item-1181" class="et_pb_menu_page_id-1181 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1181"><a href="#">Encomiendas</a>
+<ul class="sub-menu">
+	<li id="menu-item-3124" class="et_pb_menu_page_id-3119 menu-item menu-item-type-post_type menu-item-object-page menu-item-3124"><a href="https://wordpress-rochoa-production.onrender.com/carga/">Unidad Estratégica de Encomiendas Carga</a></li>
+	<li id="menu-item-1183" class="et_pb_menu_page_id-1183 menu-item menu-item-type-custom menu-item-object-custom menu-item-1183"><a href="https://rapidoochoa.tmsolutions.com.co/tmland/faces/public/tmland-carga/cotizador_envios.xhtml?parametroInicial=cmFwaWRvb2Nob2E=">Rastrea y Cotiza tu Envío</a></li>
+</ul>
+</li>
+<li id="menu-item-1219" class="et_pb_menu_page_id-1219 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1219"><a href="#">Contáctenos</a>
+<ul class="sub-menu">
+	<li id="menu-item-3235" class="et_pb_menu_page_id-276 menu-item menu-item-type-post_type menu-item-object-page menu-item-3235"><a href="https://wordpress-rochoa-production.onrender.com/contactenos/">Contáctenos</a></li>
+	<li id="menu-item-1220" class="et_pb_menu_page_id-150 menu-item menu-item-type-post_type menu-item-object-page menu-item-1220"><a href="https://wordpress-rochoa-production.onrender.com/agencias/">Agencias</a></li>
+	<li id="menu-item-1221" class="et_pb_menu_page_id-128 menu-item menu-item-type-post_type menu-item-object-page menu-item-1221"><a href="https://wordpress-rochoa-production.onrender.com/preguntas-frecuentes/">Preguntas frecuentes</a></li>
+</ul>
+</li>
+<li id="menu-item-4078" class="et_pb_menu_page_id-4078 menu-item menu-item-type-custom menu-item-object-custom menu-item-4078"><a href="https://viajes.rapidoochoa.com.co/account">Iniciar sesión</a></li>
+</ul></nav>
+							</div>
+							
+							
+							<div class="et_mobile_nav_menu">
+				<a href="#" class="mobile_nav closed">
+					<span class="mobile_menu_bar"></span>
+				</a>
+			</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+			</div> <!-- .et_pb_section -->		</div><!-- .et_builder_inner_content -->
+	</header><!-- .et-l -->
+	<div id="et-main-area">
+	
+<div id="main-content">
+	<div class="container">
+		<div id="content-area" class="clearfix">
+			<div id="left-area">
+				<article id="post-0" class="et_pb_post not_found">
+					<div class="entry">
+<!--If no results are found-->
+	<h1 class="not-found-title">No Results Found</h1>
+	<p>The page you requested could not be found. Try refining your search, or use the navigation above to locate the post.</p>
+</div>
+<!--End if no results are found-->				</article> <!-- .et_pb_post -->
+			</div> <!-- #left-area -->
+
+				<div id="sidebar">
+		<div id="search-2" class="et_pb_widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="https://wordpress-rochoa-production.onrender.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Buscar:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Buscar" />
+				</div>
+			</form></div> <!-- end .et_pb_widget -->
+		<div id="recent-posts-2" class="et_pb_widget widget_recent_entries">
+		<h4 class="widgettitle">Entradas recientes</h4>
+		<ul>
+											<li>
+					<a href="https://wordpress-rochoa-production.onrender.com/2023/07/25/cupon-feria-de-flores-2023/">Cupon Feria de Flores 2023</a>
+									</li>
+											<li>
+					<a href="https://wordpress-rochoa-production.onrender.com/2021/05/06/mi-hija-mi-vida-con-acompanante/">Mi hija, Mi vida con acompañante</a>
+									</li>
+											<li>
+					<a href="https://wordpress-rochoa-production.onrender.com/2021/04/15/que-tipo-de-viajero-eres/">¿Qué tipo de viajero eres?</a>
+									</li>
+											<li>
+					<a href="https://wordpress-rochoa-production.onrender.com/2021/03/25/esta-semana-santa-un-viaje-de-recogimiento-y-prudencia/">Esta Semana Santa, un viaje de recogimiento y prudencia</a>
+									</li>
+											<li>
+					<a href="https://wordpress-rochoa-production.onrender.com/2021/03/11/post-2-consejos-semana-santa/">3 consejos para tu viaje esta Semana Santa</a>
+									</li>
+					</ul>
+
+		</div> <!-- end .et_pb_widget --><div id="recent-comments-2" class="et_pb_widget widget_recent_comments"><h4 class="widgettitle">Comentarios recientes</h4><ul id="recentcomments"></ul></div> <!-- end .et_pb_widget -->	</div> <!-- end #sidebar -->
+		</div> <!-- #content-area -->
+	</div> <!-- .container -->
+</div> <!-- #main-content -->
+
+	<footer class="et-l et-l--footer">
+			<div class="et_builder_inner_content et_pb_gutters3"><div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_0_tb_footer et_pb_row--with-menu">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><p class="p1"><span class="s1">Síguenos en nuestras redes sociales</span></p></div>
+			</div> <!-- .et_pb_text --><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix  et_pb_bg_layout_light">
+				
+				
+				<li
+            class='et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-facebook et_pb_social_media_follow_network_0_tb_footer'><a
+              href='https://www.facebook.com/rapidochoa/'
+              class='icon et_pb_with_border'
+              title='Follow on Facebook'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-twitter et_pb_social_media_follow_network_1_tb_footer'><a
+              href='https://twitter.com/rapido_ochoa'
+              class='icon et_pb_with_border'
+              title='Follow on Twitter'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-instagram et_pb_social_media_follow_network_2_tb_footer'><a
+              href='https://www.instagram.com/rapido_ochoa/'
+              class='icon et_pb_with_border'
+              title='Follow on Instagram'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_3_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-youtube et_pb_social_media_follow_network_3_tb_footer'><a
+              href='https://www.youtube.com/channel/UCDxzujWJCzMdJBrjqCWSCIw'
+              class='icon et_pb_with_border'
+              title='Follow on Youtube'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li>
+			</ul> <!-- .et_pb_counters -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_2 et_pb_column_1_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu">
+				
+				
+				<div class="et_pb_module et_pb_menu et_pb_menu_0_tb_footer et_pb_bg_layout_dark  et_pb_text_align_right et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned">
+					
+					
+					<div class="et_pb_menu_inner_container clearfix">
+						
+						<div class="et_pb_menu__wrap">
+							<div class="et_pb_menu__menu">
+								<nav class="et-menu-nav"><ul id="menu-footer" class="et-menu nav upwards"><li id="menu-item-214" class="et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-214"><a href="https://wordpress-rochoa-production.onrender.com/">Inicio</a></li>
+<li id="menu-item-215" class="et_pb_menu_page_id-122 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-215"><a href="https://wordpress-rochoa-production.onrender.com/nosotros/">Nosotros</a>
+<ul class="sub-menu">
+	<li id="menu-item-216" class="et_pb_menu_page_id-150 menu-item menu-item-type-post_type menu-item-object-page menu-item-216"><a href="https://wordpress-rochoa-production.onrender.com/agencias/">Agencias</a></li>
+	<li id="menu-item-217" class="et_pb_menu_page_id-189 menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="https://wordpress-rochoa-production.onrender.com/encomiendas/">Encomiendas</a></li>
+	<li id="menu-item-218" class="et_pb_menu_page_id-218 menu-item menu-item-type-custom menu-item-object-custom menu-item-218"><a href="https://rapidoochoa.com.co/wp-content/uploads/2024/06/Contrato-de-Transporte-Pasajeros.pdf">Contrato de Transporte Pasajeros</a></li>
+	<li id="menu-item-3941" class="et_pb_menu_page_id-3408 menu-item menu-item-type-post_type menu-item-object-page menu-item-3941"><a href="https://wordpress-rochoa-production.onrender.com/novedades-viales-2/">Novedades viales</a></li>
+	<li id="menu-item-3948" class="et_pb_menu_page_id-2628 menu-item menu-item-type-post_type menu-item-object-page menu-item-3948"><a href="https://wordpress-rochoa-production.onrender.com/tarifas-pasajes/">Actualización Tarifas Pasajes</a></li>
+	<li id="menu-item-219" class="et_pb_menu_page_id-200 menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="https://wordpress-rochoa-production.onrender.com/control-trafico-nacional/">Control Tráfico Nacional</a></li>
+	<li id="menu-item-220" class="et_pb_menu_page_id-204 menu-item menu-item-type-post_type menu-item-object-page menu-item-220"><a href="https://wordpress-rochoa-production.onrender.com/trabaja-con-nosotros/">Trabaja con nosotros</a></li>
+</ul>
+</li>
+<li id="menu-item-221" class="et_pb_menu_page_id-221 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-221"><a href="#">Servicio al cliente</a>
+<ul class="sub-menu">
+	<li id="menu-item-470" class="et_pb_menu_page_id-276 menu-item menu-item-type-post_type menu-item-object-page menu-item-470"><a href="https://wordpress-rochoa-production.onrender.com/contactenos/">Contáctenos</a></li>
+	<li id="menu-item-223" class="et_pb_menu_page_id-128 menu-item menu-item-type-post_type menu-item-object-page menu-item-223"><a href="https://wordpress-rochoa-production.onrender.com/preguntas-frecuentes/">Preguntas frecuentes</a></li>
+	<li id="menu-item-646" class="et_pb_menu_page_id-299 menu-item menu-item-type-post_type menu-item-object-page menu-item-646"><a href="https://wordpress-rochoa-production.onrender.com/politicas-de-viaje/">Políticas de viaje</a></li>
+	<li id="menu-item-225" class="et_pb_menu_page_id-225 menu-item menu-item-type-custom menu-item-object-custom menu-item-225"><a href="https://static.rapidoochoa.com.co/wp-content/uploads/2025/07/Politica-Retracto-V2_07-2025.pdf">Derecho de retracto</a></li>
+	<li id="menu-item-425" class="et_pb_menu_page_id-334 menu-item menu-item-type-post_type menu-item-object-page menu-item-425"><a href="https://wordpress-rochoa-production.onrender.com/recomendaciones-de-viaje/">Recomendaciones de viaje</a></li>
+</ul>
+</li>
+<li id="menu-item-226" class="et_pb_menu_page_id-226 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"><a href="#">Adicional</a>
+<ul class="sub-menu">
+	<li id="menu-item-227" class="et_pb_menu_page_id-210 menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-227"><a rel="privacy-policy" href="https://wordpress-rochoa-production.onrender.com/habeas-data/">Habeas Data</a></li>
+	<li id="menu-item-333" class="et_pb_menu_page_id-299 menu-item menu-item-type-post_type menu-item-object-page menu-item-333"><a href="https://wordpress-rochoa-production.onrender.com/politicas-de-viaje/">Políticas de viaje</a></li>
+	<li id="menu-item-228" class="et_pb_menu_page_id-228 menu-item menu-item-type-custom menu-item-object-custom menu-item-228"><a href="https://drive.google.com/file/d/1kKugN9nnqeAwpadA8soj_ALnG_B49qHC/view?usp=sharing">Seguro Sustracción</a></li>
+	<li id="menu-item-229" class="et_pb_menu_page_id-229 menu-item menu-item-type-custom menu-item-object-custom menu-item-229"><a href="https://drive.google.com/file/d/1pvViDt-a6L7idTMeY2O4ZRvFOwgiPdTD/view?usp=sharing">Seguro de accidentes personales</a></li>
+	<li id="menu-item-230" class="et_pb_menu_page_id-230 menu-item menu-item-type-custom menu-item-object-custom menu-item-230"><a href="https://drive.google.com/file/d/1aJJzEQUjRZaSaAD7Sk08QaGkGvTf-WXs/view?usp=sharing">Contrato mensajería expresa</a></li>
+</ul>
+</li>
+<li id="menu-item-2654" class="et_pb_menu_page_id-2654 menu-item menu-item-type-custom menu-item-object-custom menu-item-2654"><a href="https://www.supertransporte.gov.co/">Superintendencia de Transporte</a></li>
+</ul></nav>
+							</div>
+							
+							
+							<div class="et_mobile_nav_menu">
+				<a href="#" class="mobile_nav closed et_pb_mobile_menu_upwards">
+					<span class="mobile_menu_bar"></span>
+				</a>
+			</div>
+						</div>
+						
+					</div>
+				</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_1_tb_footer">
+				<div class="et_pb_column et_pb_column_1_5 et_pb_column_2_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer et_pb_image_sticky">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2023/10/logo-color-300.png" alt="" title="logo-color-300" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_5 et_pb_column_3_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_1_tb_footer et_pb_image_sticky">
+				
+				
+				<a href="https://reserhub.com/es/" target="_blank"><span class="et_pb_image_wrap "><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2025/04/Group-8.png" alt="powered-by-reservamos-saas" title="Group 8" /></span></a>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_3_5 et_pb_column_4_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_2_tb_footer">
+				<div class="et_pb_column et_pb_column_1_6 et_pb_column_5_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_2_tb_footer">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2022/12/safe-payment-1.png" alt="" title="safe-payment 1" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_6 et_pb_column_6_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_3_tb_footer">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2022/12/pf-kushki-1.png" alt="" title="pf-kushki 1" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_6 et_pb_column_7_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_4_tb_footer">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2022/12/pf-visa-1.png" alt="" title="pf-visa 1" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_6 et_pb_column_8_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_5_tb_footer">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2022/12/pf-mastercard-1.png" alt="" title="pf-mastercard 1" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_6 et_pb_column_9_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_6_tb_footer">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://static.rapidoochoa.com.co/wp-content/uploads/2022/12/pf-pse-1.png" alt="" title="pf-pse 1" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_6 et_pb_column_10_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_3_tb_footer">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_11_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><p class="p1" style="text-align: left;">TRANSPORTES RAPIDO OCHOA S.A. Transporte terrestre, Pasajeros, Carga, Turismo. Transportes Rapido Ochoa S.A. NIT: 890902875-8 Línea de servicio al cliente: (604) 444 8888  <a href="https://www.supertransporte.gov.co/">Superintendencia de Transporte.</a> © 2022-Hoy / powered by Reservamos. Todos los derechos reservados.</p></div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section -->		</div><!-- .et_builder_inner_content -->
+	</footer><!-- .et-l -->
+	    </div> <!-- #et-main-area -->
+
+			
+		</div><!-- #et-boc -->
+		</div> <!-- #page-container -->
+
+			<!--Embed from Zendesk Chat Chat Wordpress Plugin v1.4.18-->
+    <!--Start of Zopim Live Chat Script-->
+    <script type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+      _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+      $.src='//v2.zopim.com/?6aNEi4rsVM7qzqHP6W3W3YVI7KaPYHEk';z.t=+new Date;$.
+      type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+      </script><script><!-- Start of  Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=ef49642d-33c3-4e25-8860-787243ea8323"> </script>
+<!-- End of  Zendesk Widget script --></script><!--End of Zendesk Chat Script--><!-- Reserhub account link -->
+<script>
+	fetch("https://commerce-api.rapidoochoa.com.co/accounts/auth/me", {
+credentials: "include",
+headers: {
+  "x-tenant-id": "rochoa"
+}
+}).then((response) => response.json()).then((user) => {
+if(!user?.firstName) return;
+ const userName = user.firstName;
+const loginButtons = document.querySelectorAll('a[href="https://viajes.rapidoochoa.com.co/account"]');
+loginButtons.forEach((btn)=>{btn.textContent = userName})
+});
+
+</script><link rel='stylesheet' id='et-builder-googlefonts-css' href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic|Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic&#038;subset=latin,latin-ext&#038;display=swap' type='text/css' media='all' />
+<script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.5.1" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.5.1" id="contact-form-7-js"></script>
+<script type="text/javascript" id="divi-custom-script-js-extra">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_shortcodes_strings = {"previous":"Previous","next":"Next"};
+var et_pb_custom = {"ajaxurl":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/wordpress-rochoa-production.onrender.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"4e941de05e","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"015df5defa","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"","unique_test_id":"","ab_bounce_rate":"","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":""}; var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_box_shadow_elements = [];
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-content/themes/Divi/js/custom.unified.js?ver=4.5.1" id="divi-custom-script-js"></script>
+<script type="text/javascript" src="https://static.rapidoochoa.com.co/wp-content/themes/Divi/core/admin/js/common.js?ver=4.5.1" id="et-core-common-js"></script>
+<style id="et-builder-module-design-3171-cached-inline-styles">.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu ul li a{font-family:'Open Sans',Helvetica,Arial,Lucida,sans-serif;font-size:16px;color:#e6e6e6!important}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu{background-color:#bf0f20;height:80px;padding-right:0px;padding-left:0px;margin-right:15px;margin-left:15px}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header,.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .sub-menu{box-shadow:0px 5px 10px 0px rgba(0,0,0,0.3)}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu ul li.current-menu-item a{color:#ffffff!important}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu .nav li ul{background-color:#ffffff!important;border-color:#bf0f20}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu .et_mobile_menu{border-color:#bf0f20}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu .nav li ul.sub-menu a{color:#686868!important}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu .nav li ul.sub-menu li.current-menu-item a{color:#508d41!important}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu .et_mobile_menu,.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu .et_mobile_menu ul{background-color:#ffffff!important}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu .et_mobile_menu a{color:#1e1e1e!important}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_row>.et_pb_menu__logo-wrap .et_pb_menu__logo,.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__logo-slot{max-width:190px}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_row>.et_pb_menu__logo-wrap .et_pb_menu__logo img,.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__logo-slot .et_pb_menu__logo-wrap img{max-height:50px}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .mobile_nav .mobile_menu_bar:before{color:#fafafa}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__search-button,.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__close-search-button{color:#232323}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__cart-button{color:#232323}html:not(.et_fb_edit_enabled) .et-db #et-fb-app #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header:hover .et_pb_menu__logo-wrap img{filter:hue-rotate(0deg) saturate(100%) brightness(100%) contrast(100%) invert(0%) sepia(0%);filter:hue-rotate(0deg) saturate(100%) brightness(100%) contrast(100%) invert(0%) sepia(0%)}@media only screen and (max-width:980px){.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu{height:auto}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu ul li.current-menu-item a{color:#bf0f20!important}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_row>.et_pb_menu__logo-wrap .et_pb_menu__logo,.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__logo-slot{max-width:100%}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__logo-wrap img{filter:hue-rotate(0deg) saturate(100%) brightness(100%) contrast(100%) invert(0%) sepia(0%) opacity(100%) blur(0px);backface-visibility:hidden}}@media only screen and (max-width:767px){.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header.et_pb_fullwidth_menu{height:auto}.et-db #et-boc .et-l .et_pb_fullwidth_menu_0_tb_header .et_pb_menu__logo-wrap img{filter:hue-rotate(0deg) saturate(100%) brightness(100%) contrast(100%) invert(0%) sepia(0%) opacity(100%) blur(0px);backface-visibility:hidden}}</style><style id="et-builder-module-design-3172-cached-inline-styles">.et-db #et-boc .et-l .et_pb_section_0_tb_footer.et_pb_section{padding-top:40px;padding-bottom:60px;background-color:#fafafa!important}.et-db #et-boc .et-l .et_pb_section_0_tb_footer{padding-bottom:50px!important}.et-db #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;margin-top:0px!important;margin-bottom:60px!important;padding-top:0px;padding-bottom:0px}.et-db #et-boc .et-l .et_pb_text_0_tb_footer.et_pb_text{color:#508d41!important}.et-db #et-boc .et-l .et_pb_text_1_tb_footer.et_pb_text{color:#508d41!important}.et-db #et-boc .et-l .et_pb_text_0_tb_footer{font-family:'Open Sans',Helvetica,Arial,Lucida,sans-serif;font-size:16px;margin-top:0px!important;margin-bottom:10px!important}.et-db #et-boc .et-l ul.et_pb_social_media_follow_0_tb_footer a.icon{border-radius:25px 25px 25px 25px}.et-db #et-boc .et-l ul.et_pb_social_media_follow_0_tb_footer{padding-top:0px!important;padding-bottom:0px!important;margin-top:0px!important;margin-bottom:0px!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .et_pb_menu__icon.et_pb_menu__search-button,.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .et_pb_menu__icon.et_pb_menu__close-search-button{color:#ffffff}.et-db #et-boc .et-l .et_pb_social_media_follow_0_tb_footer li.et_pb_social_icon a.icon:before{color:#ffffff}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu ul li a{font-family:'Open Sans',Helvetica,Arial,Lucida,sans-serif;color:#508d41!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu{background-color:rgba(0,0,0,0)}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu ul li.current-menu-item a{color:#508d41!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .nav li ul{background-color:#ffffff!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .et-menu-nav>ul.upwards li ul{border-color:#bf0f20}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .et_mobile_menu{border-color:#bf0f20}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .nav li ul.sub-menu a{color:#2f3d59!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .nav li ul.sub-menu li.current-menu-item a{color:#bf0f20!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .et_mobile_menu,.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .et_mobile_menu ul{background-color:#263248!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer.et_pb_menu .et_mobile_menu a{color:#fafafa!important}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .et_pb_menu_inner_container>.et_pb_menu__logo-wrap .et_pb_menu__logo,.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .et_pb_menu__logo-slot{max-width:100%}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .et_pb_menu_inner_container>.et_pb_menu__logo-wrap .et_pb_menu__logo img,.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .et_pb_menu__logo-slot .et_pb_menu__logo-wrap img{max-height:none}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .mobile_nav .mobile_menu_bar:before{color:#508d41}.et-db #et-boc .et-l .et_pb_menu_0_tb_footer .et_pb_menu__icon.et_pb_menu__cart-button{color:#232323}.et-db #et-boc .et-l .et_pb_row_1_tb_footer.et_pb_row{padding-top:0px!important;padding-right:0px!important;padding-bottom:0px!important;padding-left:0px!important;margin-top:0px!important;margin-bottom:20px!important;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px}.et-db #et-boc .et-l .et_pb_image_0_tb_footer{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;margin-top:0px!important;margin-right:0px!important;margin-bottom:0px!important;margin-left:0px!important;width:180px;max-width:180px;text-align:center}.et-db #et-boc .et-l .et_pb_image_1_tb_footer{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;margin-top:0px!important;margin-right:0px!important;margin-bottom:0px!important;margin-left:0px!important;width:240px;max-width:240px;text-align:right;margin-right:0}.et-db #et-boc .et-l .et_pb_row_2_tb_footer{min-height:98px}.et-db #et-boc .et-l .et_pb_image_3_tb_footer{text-align:left;margin-left:0}.et-db #et-boc .et-l .et_pb_image_2_tb_footer{text-align:left;margin-left:0}.et-db #et-boc .et-l .et_pb_image_6_tb_footer{text-align:left;margin-left:0}.et-db #et-boc .et-l .et_pb_image_4_tb_footer{text-align:left;margin-left:0}.et-db #et-boc .et-l .et_pb_image_5_tb_footer{text-align:left;margin-left:0}.et-db #et-boc .et-l .et_pb_row_3_tb_footer.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;margin-top:0px!important;margin-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et-db #et-boc .et-l .et_pb_row_3_tb_footer,body.et-db #page-container .et-db #et-boc .et-l #et-boc .et-l .et_pb_row_3_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et-db #page-container #et-boc .et-l #et-boc .et-l .et_pb_row_3_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page.et-db #page-container #et-boc .et-l #et-boc .et-l .et_pb_row_3_tb_footer.et_pb_row{width:100%}.et-db #et-boc .et-l .et_pb_text_1_tb_footer{font-family:'Open Sans',Helvetica,Arial,Lucida,sans-serif;font-size:11px}.et-db #et-boc .et-l .et_pb_social_media_follow_network_0_tb_footer a.icon{background-color:#1f8641!important}.et-db #et-boc .et-l .et_pb_social_media_follow_network_3_tb_footer a.icon{background-color:#1f8641!important}.et-db #et-boc .et-l .et_pb_social_media_follow_network_2_tb_footer a.icon{background-color:#1f8641!important}.et-db #et-boc .et-l .et_pb_social_media_follow_network_1_tb_footer a.icon{background-color:#1f8641!important}.et-db #et-boc .et-l .et_pb_row_2_tb_footer.et_pb_row{margin-left:auto!important;margin-right:auto!important}.et-db #et-boc .et-l .et_pb_image_0_tb_footer.et_pb_module{margin-left:auto!important;margin-right:auto!important}.et-db #et-boc .et-l .et_pb_image_1_tb_footer.et_pb_module{margin-left:auto!important;margin-right:auto!important}@media only screen and (max-width:980px){.et-db #et-boc .et-l .et_pb_section_0_tb_footer.et_pb_section{padding-right:15px;padding-left:15px}.et-db #et-boc .et-l .et_pb_row_0_tb_footer,body.et-db #page-container .et-db #et-boc .et-l #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et-db #page-container #et-boc .et-l #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page.et-db #page-container #et-boc .et-l #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row{width:100%}.et-db #et-boc .et-l .et_pb_row_1_tb_footer,body.et-db #page-container .et-db #et-boc .et-l #et-boc .et-l .et_pb_row_1_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et-db #page-container #et-boc .et-l #et-boc .et-l .et_pb_row_1_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page.et-db #page-container #et-boc .et-l #et-boc .et-l .et_pb_row_1_tb_footer.et_pb_row{width:100%}.et-db #et-boc .et-l .et_pb_image_0_tb_footer{margin-left:0px!important;margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_1_tb_footer{margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_2_tb_footer{text-align:center;margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_3_tb_footer{text-align:center;margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_4_tb_footer{text-align:center;margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_5_tb_footer{text-align:center;margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_6_tb_footer{text-align:center;margin-left:auto;margin-right:auto}}@media only screen and (max-width:767px){.et-db #et-boc .et-l .et_pb_image_0_tb_footer{margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_1_tb_footer{margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_2_tb_footer{margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_3_tb_footer{margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_4_tb_footer{margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_5_tb_footer{margin-left:auto;margin-right:auto}.et-db #et-boc .et-l .et_pb_image_6_tb_footer{margin-left:auto;margin-right:auto}}</style>		
+			<span class="et_pb_scroll_top et-pb-icon"></span>
+	</body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 0/623 objects using Disk
+Page Caching using Disk: Enhanced (Page is 404) 
+Content Delivery Network via Amazon Web Services: CloudFront: static.rapidoochoa.com.co
+
+Served from: wordpress-rochoa-production.onrender.com @ 2026-01-19 21:56:17 by W3 Total Cache
+-->

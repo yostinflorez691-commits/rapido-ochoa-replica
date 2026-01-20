@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path' | { read fp; case \"$fp\" in *.ts|*.tsx|*.js|*.jsx) npx prettier --write \"$fp\" 2>/dev/null; npx eslint --fix \"$fp\" 2>/dev/null;; *.css|*.scss) npx prettier --write \"$fp\" 2>/dev/null;; esac; }"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[$(date)] Tarea completada\" >> .claude/activity.log"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": {
+      "Write": ["*.env", ".env.*", "*.key", "*.pem", ".git/*"],
+      "Edit": ["*.env", ".env.*", "*.key", "*.pem", ".git/*", "package-lock.json"]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+============================================
+   REPLICA RAPIDO OCHOA - INICIO RAPIDO
+============================================
+
+PASO 1: Abrir terminal en la carpeta
+----------------------------------------
+cd C:\Users\Administrator\Desktop\sitio-replica
+
+
+PASO 2: Iniciar el servidor
+----------------------------------------
+npm run dev
+
+
+PASO 3: Abrir en navegador
+----------------------------------------
+http://localhost:3000
+
+
+============================================
+        ESTADO ACTUAL DEL PROYECTO
+        (Actualizado: 20 Enero 2026)
+============================================
+
+[COMPLETADO] Pagina principal con formulario de busqueda
+[COMPLETADO] Pagina de resultados de viajes
+[COMPLETADO] Conexion con API REAL de Rapido Ochoa
+[COMPLETADO] Header con logo real
+[COMPLETADO] Diseño responsive (movil y desktop)
+[COMPLETADO] Autocompletado de terminales (API real)
+[COMPLETADO] Filtros por horario
+
+============================================
+   MEJORAS VISUALES RECIENTES (20 Ene)
+============================================
+
+- Header con logo imagen real
+- Nombres terminales de API real
+- Logo REY DORADO con gradiente dorado
+- Badge "Popular" con llama de fuego
+- Seccion "Viajes recomendados PARA TI"
+- Badge "Lo Maximo" dorado
+- Badge "De Primera" + [VIP]
+- Iconos sol/luna con fondo circular
+- Navegador de fechas rediseñado
+- Footer Reserhub mejorado
+
+============================================
+      SI NECESITAS MODIFICAR ALGO
+============================================
+
+Pagina de resultados (PRINCIPAL):
+  src/app/search/[origin]/[destination]/[date]/p/[passengers]/departures/page.tsx
+
+Formulario de busqueda:
+  src/components/sections/search-form.tsx
+
+Header/Logo:
+  src/components/layout/header.tsx
+
+API Proxy (busquedas):
+  src/app/api/search/route.ts
+
+Pagina principal:
+  src/app/page.tsx
+
+
+============================================
+       COMPARAR CON SITIO ORIGINAL
+============================================
+
+Abrir en navegador:
+  - Original: https://viajes.rapidoochoa.com.co
+  - Replica:  http://localhost:3000
+
+Capturar screenshots:
+  node scripts/quick-compare.js
+
+
+============================================
+         SOLUCION DE PROBLEMAS
+============================================
+
+Si hay errores al iniciar:
+  npm install
+  npm run dev
+
+Si hay errores de TypeScript:
+  npx tsc --noEmit
+
+Si la API no responde:
+  - Verificar conexion a internet
+  - Revisar consola del navegador
+
+
+============================================
+         DOCUMENTACION COMPLETA
+============================================
+
+Ver archivo: INSTRUCCIONES-PROYECTO.md
+
+============================================
