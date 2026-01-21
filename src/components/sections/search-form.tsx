@@ -753,42 +753,58 @@ export function SearchForm({ className }: SearchFormProps) {
                   type="button"
                   onClick={() => { setDateOption("hoy"); setShowCalendar(false); }}
                   className={cn(
-                    "h-7 rounded-full bg-transparent px-2 py-1 text-[14px] font-semibold text-[#232323] transition-colors sm:h-8 sm:px-3 sm:text-[16px]",
+                    "flex h-7 items-center gap-1.5 rounded-full px-2 py-1 text-[14px] font-semibold transition-all duration-200 sm:h-8 sm:px-3 sm:text-[16px]",
                     dateOption === "hoy"
-                      ? "border-2 border-[#232323]"
-                      : "border border-[#C7C7C7] hover:border-[#232323]"
+                      ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
+                      : "border border-[#C7C7C7] bg-transparent text-[#232323] hover:border-[#232323]"
                   )}
                 >
-                  Hoy
+                  {dateOption === "hoy" && (
+                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  )}
+                  <span>Hoy</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => { setDateOption("manana"); setShowCalendar(false); }}
                   className={cn(
-                    "h-7 rounded-full bg-transparent px-2 py-1 text-[14px] font-semibold text-[#232323] transition-colors sm:h-8 sm:px-3 sm:text-[16px]",
+                    "flex h-7 items-center gap-1.5 rounded-full px-2 py-1 text-[14px] font-semibold transition-all duration-200 sm:h-8 sm:px-3 sm:text-[16px]",
                     dateOption === "manana"
-                      ? "border-2 border-[#232323]"
-                      : "border border-[#C7C7C7] hover:border-[#232323]"
+                      ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
+                      : "border border-[#C7C7C7] bg-transparent text-[#232323] hover:border-[#232323]"
                   )}
                 >
-                  Mañana
+                  {dateOption === "manana" && (
+                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  )}
+                  <span>Mañana</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => { setDateOption("elegir"); setShowCalendar(true); }}
                   className={cn(
-                    "flex h-7 items-center gap-1 rounded-full bg-transparent px-2 py-1 text-[14px] font-semibold text-[#232323] transition-colors sm:h-8 sm:px-3 sm:text-[16px]",
+                    "flex h-7 items-center gap-1.5 rounded-full px-2 py-1 text-[14px] font-semibold transition-all duration-200 sm:h-8 sm:px-3 sm:text-[16px]",
                     dateOption === "elegir"
-                      ? "border-2 border-[#232323]"
-                      : "border border-[#C7C7C7] hover:border-[#232323]"
+                      ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
+                      : "border border-[#C7C7C7] bg-transparent text-[#232323] hover:border-[#232323]"
                   )}
                 >
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                    <rect x="1.5" y="2.5" width="12" height="10" rx="1" stroke="#232323" strokeWidth="1.2"/>
-                    <path d="M4.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
-                    <path d="M10.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
-                    <path d="M1.5 5.5H13.5" stroke="#232323" strokeWidth="1.2"/>
-                  </svg>
+                  {dateOption === "elegir" ? (
+                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  ) : (
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                      <rect x="1.5" y="2.5" width="12" height="10" rx="1" stroke="#232323" strokeWidth="1.2"/>
+                      <path d="M4.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
+                      <path d="M10.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
+                      <path d="M1.5 5.5H13.5" stroke="#232323" strokeWidth="1.2"/>
+                    </svg>
+                  )}
                   <span>{customDate ? customDate.toLocaleDateString('es-CO', { day: '2-digit', month: 'short' }) : 'Elegir'}</span>
                 </button>
               </div>
@@ -1168,38 +1184,54 @@ export function SearchForm({ className }: SearchFormProps) {
                     type="button"
                     onClick={() => { setDateOption("hoy"); setShowCalendar(false); }}
                     className={cn(
-                      "rounded-full px-3 py-1.5 text-[14px] transition-all",
+                      "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[14px] font-semibold transition-all duration-200",
                       dateOption === "hoy"
-                        ? "border-[1.5px] border-[#333] bg-white font-semibold text-[#333]"
+                        ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
                         : "border border-[#555] bg-white text-[#333] hover:border-[#333]"
                     )}
                   >
-                    Hoy
+                    {dateOption === "hoy" && (
+                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    )}
+                    <span>Hoy</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => { setDateOption("manana"); setShowCalendar(false); }}
                     className={cn(
-                      "rounded-full px-3 py-1.5 text-[14px] transition-all",
+                      "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[14px] font-semibold transition-all duration-200",
                       dateOption === "manana"
-                        ? "border-[1.5px] border-[#333] bg-white font-semibold text-[#333]"
+                        ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
                         : "border border-[#555] bg-white text-[#333] hover:border-[#333]"
                     )}
                   >
-                    Mañana
+                    {dateOption === "manana" && (
+                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    )}
+                    <span>Mañana</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => { setDateOption("elegir"); setShowCalendar(!showCalendar); }}
                     className={cn(
-                      "relative flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[14px] transition-all",
+                      "relative flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[14px] font-semibold transition-all duration-200",
                       dateOption === "elegir"
-                        ? "border-[1.5px] border-[#333] bg-white font-semibold text-[#333]"
+                        ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
                         : "border border-[#555] bg-white text-[#333] hover:border-[#333]"
                     )}
                   >
-                    <CalendarIcon className="h-4 w-4" />
-                    {customDate ? customDate.toLocaleDateString('es-CO', { day: '2-digit', month: 'short' }) : 'Elegir'}
+                    {dateOption === "elegir" ? (
+                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    ) : (
+                      <CalendarIcon className="h-4 w-4" />
+                    )}
+                    <span>{customDate ? customDate.toLocaleDateString('es-CO', { day: '2-digit', month: 'short' }) : 'Elegir'}</span>
                   </button>
                 </div>
 
