@@ -524,29 +524,35 @@ export function SearchForm({ className }: SearchFormProps) {
 
                     {/* Results */}
                     <ul className="flex-1 overflow-auto">
-                      {filteredOriginTerminals.map((terminal, index) => (
-                        <li
-                          key={terminal.id}
-                          onClick={() => selectOrigin(terminal)}
-                          className={cn(
-                            "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors",
-                            index === 0
-                              ? "bg-[rgba(237,237,237,0.5)]"
-                              : "bg-transparent hover:bg-[#f5f5f5]"
-                          )}
-                        >
-                          {/* Ícono de pin de ubicación verde */}
-                          <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                            <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
-                          </svg>
+                      {filteredOriginTerminals.map((terminal, index) => {
+                        const isFirstItem = index === 0;
+                        return (
+                          <li
+                            key={terminal.id}
+                            onClick={() => selectOrigin(terminal)}
+                            className={cn(
+                              "flex w-full cursor-pointer items-center gap-[10px] p-[15px] transition-colors",
+                              isFirstItem
+                                ? "bg-[rgba(237,237,237,0.5)]"
+                                : "bg-transparent"
+                            )}
+                          >
+                            {/* Ícono de pin de ubicación ROJO */}
+                            <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                              <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                            </svg>
 
-                          {/* Texto en formato del original: Ciudad bold + Departamento Terminal */}
-                          <div className="text-[16px] text-[#232323]">
-                            <b>{terminal.city}, </b>
-                            <span>{terminal.department} {terminal.terminal}</span>
-                          </div>
-                        </li>
-                      ))}
+                            {/* Texto: seleccionado negro, no seleccionado gris */}
+                            <div className={cn(
+                              "text-[16px]",
+                              isFirstItem ? "text-[#232323]" : "text-[#979797]"
+                            )}>
+                              <b>{terminal.city}, </b>
+                              <span>{terminal.department} {terminal.terminal}</span>
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </motion.div>
@@ -606,29 +612,35 @@ export function SearchForm({ className }: SearchFormProps) {
 
                     {/* Results */}
                     <ul className="flex-1 overflow-auto">
-                      {filteredDestinationTerminals.map((terminal, index) => (
-                        <li
-                          key={terminal.id}
-                          onClick={() => selectDestination(terminal)}
-                          className={cn(
-                            "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors",
-                            index === 0
-                              ? "bg-[rgba(237,237,237,0.5)]"
-                              : "bg-transparent hover:bg-[#f5f5f5]"
-                          )}
-                        >
-                          {/* Ícono de pin de ubicación verde */}
-                          <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                            <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
-                          </svg>
+                      {filteredDestinationTerminals.map((terminal, index) => {
+                        const isFirstItem = index === 0;
+                        return (
+                          <li
+                            key={terminal.id}
+                            onClick={() => selectDestination(terminal)}
+                            className={cn(
+                              "flex w-full cursor-pointer items-center gap-[10px] p-[15px] transition-colors",
+                              isFirstItem
+                                ? "bg-[rgba(237,237,237,0.5)]"
+                                : "bg-transparent"
+                            )}
+                          >
+                            {/* Ícono de pin de ubicación ROJO */}
+                            <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                              <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                            </svg>
 
-                          {/* Texto en formato del original: Ciudad bold + Departamento Terminal */}
-                          <div className="text-[16px] text-[#232323]">
-                            <b>{terminal.city}, </b>
-                            <span>{terminal.department} {terminal.terminal}</span>
-                          </div>
-                        </li>
-                      ))}
+                            {/* Texto: seleccionado negro, no seleccionado gris */}
+                            <div className={cn(
+                              "text-[16px]",
+                              isFirstItem ? "text-[#232323]" : "text-[#979797]"
+                            )}>
+                              <b>{terminal.city}, </b>
+                              <span>{terminal.department} {terminal.terminal}</span>
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </motion.div>
@@ -812,28 +824,35 @@ export function SearchForm({ className }: SearchFormProps) {
                           </div>
                         ) : (
                           <ul>
-                            {filteredOriginTerminals.map((terminal, index) => (
-                              <li
-                                key={terminal.id}
-                                onClick={() => selectOrigin(terminal)}
-                                className={cn(
-                                  "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors hover:bg-[#f5f5f5]",
-                                  index === originIndex && "bg-[#f0f0f0]",
-                                  index === 0 && "bg-[rgba(237,237,237,0.5)]"
-                                )}
-                              >
-                                {/* Ícono de pin de ubicación verde */}
-                                <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                                  <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
-                                </svg>
+                            {filteredOriginTerminals.map((terminal, index) => {
+                              const isFirstItem = index === 0;
+                              const isHighlighted = index === originIndex;
+                              return (
+                                <li
+                                  key={terminal.id}
+                                  onClick={() => selectOrigin(terminal)}
+                                  className={cn(
+                                    "flex w-full cursor-pointer items-center gap-[10px] p-[15px] transition-colors",
+                                    isHighlighted && "bg-[#f0f0f0]",
+                                    isFirstItem && !isHighlighted && "bg-[rgba(237,237,237,0.5)]"
+                                  )}
+                                >
+                                  {/* Ícono de pin de ubicación ROJO */}
+                                  <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                                    <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                                  </svg>
 
-                                {/* Texto en formato del original */}
-                                <div className="text-[16px] text-[#232323]">
-                                  <b>{terminal.city}, </b>
-                                  <span>{terminal.department} {terminal.terminal}</span>
-                                </div>
-                              </li>
-                            ))}
+                                  {/* Texto: seleccionado negro, no seleccionado gris */}
+                                  <div className={cn(
+                                    "text-[16px]",
+                                    isFirstItem ? "text-[#232323]" : "text-[#979797]"
+                                  )}>
+                                    <b>{terminal.city}, </b>
+                                    <span>{terminal.department} {terminal.terminal}</span>
+                                  </div>
+                                </li>
+                              );
+                            })}
                           </ul>
                         )}
                       </div>
@@ -935,28 +954,35 @@ export function SearchForm({ className }: SearchFormProps) {
                           </div>
                         ) : (
                           <ul>
-                            {filteredDestinationTerminals.map((terminal, index) => (
-                              <li
-                                key={terminal.id}
-                                onClick={() => selectDestination(terminal)}
-                                className={cn(
-                                  "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors hover:bg-[#f5f5f5]",
-                                  index === destinationIndex && "bg-[#f0f0f0]",
-                                  index === 0 && "bg-[rgba(237,237,237,0.5)]"
-                                )}
-                              >
-                                {/* Ícono de pin de ubicación verde */}
-                                <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                                  <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
-                                </svg>
+                            {filteredDestinationTerminals.map((terminal, index) => {
+                              const isFirstItem = index === 0;
+                              const isHighlighted = index === destinationIndex;
+                              return (
+                                <li
+                                  key={terminal.id}
+                                  onClick={() => selectDestination(terminal)}
+                                  className={cn(
+                                    "flex w-full cursor-pointer items-center gap-[10px] p-[15px] transition-colors",
+                                    isHighlighted && "bg-[#f0f0f0]",
+                                    isFirstItem && !isHighlighted && "bg-[rgba(237,237,237,0.5)]"
+                                  )}
+                                >
+                                  {/* Ícono de pin de ubicación ROJO */}
+                                  <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                                    <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                                  </svg>
 
-                                {/* Texto en formato del original */}
-                                <div className="text-[16px] text-[#232323]">
-                                  <b>{terminal.city}, </b>
-                                  <span>{terminal.department} {terminal.terminal}</span>
-                                </div>
-                              </li>
-                            ))}
+                                  {/* Texto: seleccionado negro, no seleccionado gris */}
+                                  <div className={cn(
+                                    "text-[16px]",
+                                    isFirstItem ? "text-[#232323]" : "text-[#979797]"
+                                  )}>
+                                    <b>{terminal.city}, </b>
+                                    <span>{terminal.department} {terminal.terminal}</span>
+                                  </div>
+                                </li>
+                              );
+                            })}
                           </ul>
                         )}
                       </div>
