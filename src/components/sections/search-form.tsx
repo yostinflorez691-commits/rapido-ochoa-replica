@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
-import { ViajesRecientes } from "@/components/ui/viajes-recientes";
 import { cn } from "@/lib/utils";
 
 interface SearchFormProps {
@@ -390,20 +389,6 @@ export function SearchForm({ className }: SearchFormProps) {
           </h1>
         </motion.div>
 
-        {/* Viajes Recientes - Show when no origin selected */}
-        <AnimatePresence>
-          {showViajesRecientes && !selectedOrigin && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="mx-auto mb-4 max-w-[1150px]"
-            >
-              <ViajesRecientes onSelectViaje={handleSelectViajeReciente} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-
         {/* Search Form */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
@@ -567,37 +552,106 @@ export function SearchForm({ className }: SearchFormProps) {
                     </div>
 
                     {/* Results */}
-                    <ul className="flex-1 overflow-auto">
-                      {filteredOriginTerminals.map((terminal, index) => {
-                        const isFirstItem = index === 0;
-                        return (
-                          <li
-                            key={terminal.id}
-                            onClick={() => selectOrigin(terminal)}
-                            className={cn(
-                              "flex w-full cursor-pointer items-center gap-[10px] p-[15px] transition-colors",
-                              isFirstItem
-                                ? "bg-[rgba(237,237,237,0.5)]"
-                                : "bg-transparent"
-                            )}
-                          >
-                            {/* Ícono pin: VERDE seleccionado, GRIS no seleccionado */}
-                            <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                              <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill={isFirstItem ? "#1F8641" : "#D5D5D5"}/>
-                            </svg>
-
-                            {/* Texto: seleccionado negro, no seleccionado gris */}
-                            <div className={cn(
-                              "text-[16px]",
-                              isFirstItem ? "text-[#232323]" : "text-[#979797]"
-                            )}>
-                              <b>{terminal.city}, </b>
-                              <span>{terminal.department} {terminal.terminal}</span>
+                    <div className="flex-1 overflow-auto">
+                      {/* Viajes Recientes - Mobile Modal */}
+                      {!originSearch && (
+                        <>
+                          <div className="m-3 rounded-lg border-2 border-dashed border-[#1F8641] bg-[#f8fff8] p-4">
+                            <h4 className="mb-3 flex items-center gap-2 text-[14px] font-semibold text-[#2d3436]">
+                              <svg className="h-4 w-4 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              Elige tu próximo viaje
+                            </h4>
+                            <div
+                              onClick={() => handleSelectViajeReciente("Medellín, Antioquia Medellín Terminal Norte", "Bogota, Cundinamarca Bogotá Terminal Salitre")}
+                              className="mb-2 flex cursor-pointer items-start gap-3 rounded-md p-2 transition-colors hover:bg-[#e8f5e9]"
+                            >
+                              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              <div>
+                                <div className="text-[14px] font-semibold text-[#2d3436]">
+                                  <strong>Medellín</strong> Terminal Norte
+                                </div>
+                                <div className="text-[12px] text-[#636e72]">
+                                  <strong>Bogotá</strong> Terminal Salitre
+                                </div>
+                              </div>
                             </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                            <div
+                              onClick={() => handleSelectViajeReciente("Medellín, Antioquia Medellín Terminal Norte", "Cartagena, Bolivar Cartagena")}
+                              className="mb-2 flex cursor-pointer items-start gap-3 rounded-md p-2 transition-colors hover:bg-[#e8f5e9]"
+                            >
+                              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              <div>
+                                <div className="text-[14px] font-semibold text-[#2d3436]">
+                                  <strong>Medellín</strong> Terminal Norte
+                                </div>
+                                <div className="text-[12px] text-[#636e72]">
+                                  <strong>Cartagena</strong> Terminal Cartagena
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              onClick={() => handleSelectViajeReciente("Bogota, Cundinamarca Bogotá Terminal Salitre", "Medellín, Antioquia Medellín Terminal Norte")}
+                              className="flex cursor-pointer items-start gap-3 rounded-md p-2 transition-colors hover:bg-[#e8f5e9]"
+                            >
+                              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              <div>
+                                <div className="text-[14px] font-semibold text-[#2d3436]">
+                                  <strong>Bogotá</strong> Terminal Salitre
+                                </div>
+                                <div className="text-[12px] text-[#636e72]">
+                                  <strong>Medellín</strong> Terminal Norte
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="mx-3 h-px bg-[#e9ecef]" />
+                        </>
+                      )}
+
+                      <ul>
+                        {filteredOriginTerminals.map((terminal, index) => {
+                          const isFirstItem = index === 0;
+                          return (
+                            <li
+                              key={terminal.id}
+                              onClick={() => selectOrigin(terminal)}
+                              className={cn(
+                                "flex w-full cursor-pointer items-center gap-[10px] p-[15px] transition-colors",
+                                isFirstItem
+                                  ? "bg-[rgba(237,237,237,0.5)]"
+                                  : "bg-transparent"
+                              )}
+                            >
+                              {/* Ícono pin: VERDE seleccionado, GRIS no seleccionado */}
+                              <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                                <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill={isFirstItem ? "#1F8641" : "#D5D5D5"}/>
+                              </svg>
+
+                              {/* Texto: seleccionado negro, no seleccionado gris */}
+                              <div className={cn(
+                                "text-[16px]",
+                                isFirstItem ? "text-[#232323]" : "text-[#979797]"
+                              )}>
+                                <b>{terminal.city}, </b>
+                                <span>{terminal.department} {terminal.terminal}</span>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -860,7 +914,74 @@ export function SearchForm({ className }: SearchFormProps) {
                       exit={{ opacity: 0, y: -10 }}
                       className="absolute left-0 top-full z-50 mt-1 w-[500px] overflow-hidden rounded-[20px] border border-white bg-white shadow-[0_0_30px_rgba(0,0,0,0.15)]"
                     >
-                      <div className="max-h-[300px] overflow-y-auto">
+                      <div className="max-h-[400px] overflow-y-auto">
+                        {/* Viajes Recientes - Inside Dropdown */}
+                        {!originSearch && (
+                          <div className="m-3 rounded-lg border-2 border-dashed border-[#1F8641] bg-[#f8fff8] p-4">
+                            <h4 className="mb-3 flex items-center gap-2 text-[14px] font-semibold text-[#2d3436]">
+                              <svg className="h-4 w-4 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              Elige tu próximo viaje
+                            </h4>
+                            <div
+                              onClick={() => handleSelectViajeReciente("Medellín, Antioquia Medellín Terminal Norte", "Bogota, Cundinamarca Bogotá Terminal Salitre")}
+                              className="mb-2 flex cursor-pointer items-start gap-3 rounded-md p-2 transition-colors hover:bg-[#e8f5e9]"
+                            >
+                              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              <div>
+                                <div className="text-[14px] font-semibold text-[#2d3436]">
+                                  <strong>Medellín</strong> Terminal Norte
+                                </div>
+                                <div className="text-[12px] text-[#636e72]">
+                                  <strong>Bogotá</strong> Terminal Salitre
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              onClick={() => handleSelectViajeReciente("Medellín, Antioquia Medellín Terminal Norte", "Cartagena, Bolivar Cartagena")}
+                              className="mb-2 flex cursor-pointer items-start gap-3 rounded-md p-2 transition-colors hover:bg-[#e8f5e9]"
+                            >
+                              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              <div>
+                                <div className="text-[14px] font-semibold text-[#2d3436]">
+                                  <strong>Medellín</strong> Terminal Norte
+                                </div>
+                                <div className="text-[12px] text-[#636e72]">
+                                  <strong>Cartagena</strong> Terminal Cartagena
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              onClick={() => handleSelectViajeReciente("Bogota, Cundinamarca Bogotá Terminal Salitre", "Medellín, Antioquia Medellín Terminal Norte")}
+                              className="flex cursor-pointer items-start gap-3 rounded-md p-2 transition-colors hover:bg-[#e8f5e9]"
+                            >
+                              <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#1F8641]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                              </svg>
+                              <div>
+                                <div className="text-[14px] font-semibold text-[#2d3436]">
+                                  <strong>Bogotá</strong> Terminal Salitre
+                                </div>
+                                <div className="text-[12px] text-[#636e72]">
+                                  <strong>Medellín</strong> Terminal Norte
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Separator */}
+                        {!originSearch && <div className="mx-3 h-px bg-[#e9ecef]" />}
+
                         {isLoadingTerminals ? (
                           <div className="flex items-center justify-center gap-2 px-4 py-4 text-[14px] text-[#686868]">
                             <Loader2 className="h-4 w-4 animate-spin" />
