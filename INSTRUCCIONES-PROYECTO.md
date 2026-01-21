@@ -40,7 +40,9 @@ sitio-replica/
 │   │   ├── layout.tsx                  # Layout principal
 │   │   ├── api/
 │   │   │   ├── search/route.ts         # Proxy API para busquedas
-│   │   │   └── places/route.ts         # Proxy API para terminales
+│   │   │   ├── places/route.ts         # Proxy API para terminales
+│   │   │   ├── trips/[tripId]/details/route.ts  # Proxy API para asientos
+│   │   │   └── token/refresh/route.ts  # API para gestionar token
 │   │   └── search/[origin]/[destination]/[date]/p/[passengers]/departures/
 │   │       └── page.tsx                # Pagina de resultados de busqueda
 │   │
@@ -49,11 +51,13 @@ sitio-replica/
 │   │   │   ├── header.tsx              # Header con logo
 │   │   │   └── footer.tsx              # Footer
 │   │   ├── sections/
-│   │   │   └── search-form.tsx         # Formulario de busqueda principal
+│   │   │   ├── search-form.tsx         # Formulario de busqueda principal
+│   │   │   └── seat-map.tsx            # Mapa de asientos del bus
 │   │   └── ui/                         # Componentes UI reutilizables
 │   │
 │   └── lib/
 │       ├── api.ts                      # Funciones para llamar API
+│       ├── token-manager.ts            # Gestor del token de API
 │       └── utils.ts                    # Utilidades (cn function)
 │
 ├── public/
@@ -87,6 +91,112 @@ Los endpoints estan proxeados localmente:
 - `POST /api/search` -> Crea busqueda
 - `GET /api/search?id={searchId}` -> Obtiene resultados
 - `GET /api/places` -> Lista terminales
+
+---
+
+## API de Seleccion de Asientos (Ver Sillas)
+
+### Flujo de la API:
+
+1. **Solicitar detalles del viaje:**
+```
+POST https://one-api.rapidoochoa.com.co/api/v2/trips/{trip_id}/details_requests
+```
+Respuesta: `{ "id": 24298863, "state": "in_progress", ... }`
+
+2. **Polling para obtener resultado:**
+```
+GET https://one-api.rapidoochoa.com.co/api/v2/trips/{trip_id}/details_requests/{request_id}
+```
+Esperar hasta que `state === "finished"`
+
+### Estructura de Respuesta:
+
+```json
+{
+  "id": 24298863,
+  "state": "finished",
+  "trip": {
+    "id": "1_29_21jan260640_001300224_27",
+    "pricing": { "total": 115000, ... },
+    "departure": "2026-01-21T07:40:00",
+    "arrival": "2026-01-21T18:40:00",
+    "availability": 32,
+    "capacity": 42,
+    "service": "Rey Dorado - Lo máximo",
+    "allows_seat_selection": true,
+    "diagram_type": "bus"
+  },
+  "lines": { ... },
+  "terminals": { ... },
+  "bus": [...]  // Mapa de asientos
+}
+```
+
+### Estructura del Mapa de Asientos (`bus`):
+
+El campo `bus` es un array 3D:
+- **Nivel 1:** Pisos del bus (normalmente 1)
+- **Nivel 2:** Filas del bus
+- **Nivel 3:** Asientos por fila (tipicamente 5: 2 + pasillo + 2)
+
+```json
+"bus": [
+  [  // Piso 1
+    [  // Fila 1
+      { "category": "seat", "number": "1", "occupied": false, "adjacent_seats": null },
+      { "category": "seat", "number": "2", "occupied": true, "adjacent_seats": null },
+      { "category": "hallway" },
+      { "category": "seat", "number": "4", "occupied": false, "adjacent_seats": null },
+      { "category": "seat", "number": "3", "occupied": false, "adjacent_seats": null }
+    ],
+    // ... mas filas
+  ]
+]
+```
+
+### Tipos de Elementos:
+
+| category | Descripcion |
+|----------|-------------|
+| `seat` | Asiento (tiene number, occupied) |
+| `hallway` | Pasillo central |
+
+### Estados de Asiento:
+
+| occupied | Significado |
+|----------|-------------|
+| `false` | Disponible (se puede seleccionar) |
+| `true` | Ocupado (deshabilitado) |
+
+### Estructura HTML del Mapa:
+
+```
+.new-seats-layout
+  .new-seats-layout-diagram
+    .vehicle-container.bus
+      .vehicle-front (frente del bus con ruedas)
+      .seats-layout
+        .seats-layout-row (cada fila)
+          .seats-layout-item (asiento izquierda)
+          .seats-layout-item-middle (asiento centro-izq)
+          .hallway (pasillo)
+          .seats-layout-aisle (asiento centro-der)
+          .seats-layout-item (asiento derecha)
+```
+
+### Clases CSS de Asientos:
+
+- `css-ia0sik` - Asiento disponible (boton activo)
+- `css-1nj3sim` - Asiento ocupado (boton disabled con icono persona)
+- `css-bjn8wh` - Contenedor del boton
+
+### Servicios del Bus (amenities):
+
+La respuesta incluye servicios disponibles:
+```json
+"services": ["comfortable", "tv", "wifi", "gps", "charger_usb", "air_conditioning", "bathroom"]
+```
 
 ---
 
@@ -191,8 +301,12 @@ La pagina de resultados ahora es **completamente responsive** y funciona correct
 |---------|-----------|
 | `src/app/search/.../page.tsx` | Pagina de resultados (PRINCIPAL) |
 | `src/components/sections/search-form.tsx` | Formulario de busqueda |
+| `src/components/sections/seat-map.tsx` | Mapa de asientos del bus (layout horizontal) |
 | `src/components/layout/header.tsx` | Header global |
 | `src/app/api/search/route.ts` | Proxy API busquedas |
+| `src/app/api/trips/[tripId]/details/route.ts` | Proxy API detalles viaje/asientos |
+| `src/app/api/token/refresh/route.ts` | API para gestionar/actualizar token |
+| `src/lib/token-manager.ts` | Gestor centralizado del token de API |
 | `src/lib/api.ts` | Funciones API |
 
 ---
@@ -237,14 +351,56 @@ Fondo pagina:       #f8f8f8
 
 ---
 
+## Funcionalidades Recientes (20 Enero 2026)
+
+### Seleccion de Asientos - COMPLETADO
+
+1. [x] **API Proxy para detalles del viaje**
+   - Ruta: `src/app/api/trips/[tripId]/details/route.ts`
+   - Maneja autenticacion con token de API
+   - Implementa polling para esperar respuesta
+
+2. [x] **Componente SeatMap** (Rediseñado para igualar al original)
+   - Ruta: `src/components/sections/seat-map.tsx`
+   - **Layout horizontal** (vista desde arriba del bus, igual al original)
+   - Asientos de **40x40px** con bordes grises
+   - Estados: Disponible (blanco/gris), Seleccionado (rojo), Ocupado (icono persona)
+   - **Panel derecho** con:
+     - "Tus sillas" - leyenda con contadores (Libres, Elegidos, Ocupados)
+     - "Precio aproximado*" - muestra precio total
+     - Boton rojo "Elige al menos 1 silla" / "Continuar"
+   - **Icono del conductor** a la izquierda del diagrama
+   - **Fondo degradado rosa claro** como el original
+   - Responsive: en movil el panel va debajo del diagrama
+
+3. [x] **Integracion en pagina de resultados**
+   - Boton "Ver sillas" abre/cierra mapa de asientos
+   - Estado de expansion manejado por `expandedTripId`
+   - Animaciones con Framer Motion
+
+### Estructura del Componente SeatMap:
+
+```
++--------------------------------------------------+
+|  [Conductor]  | Asientos (horizontal)  |         |
+|               | 1  5  9  13 17 21 ... |  Tus     |
+|               | 2  6  10 14 18 22 ... |  sillas  |
+|               |    (pasillo)          |  ------  |
+|               | 3  7  11 15 19 23 ... |  Precio  |
+|               | 4  8  12 16 20 24 ... |  aprox.  |
+|               |                        |  [Boton] |
++--------------------------------------------------+
+```
+
+---
+
 ## Proximos Pasos Sugeridos
 
-1. [ ] Implementar seleccion de asientos
-2. [ ] Agregar pagina de pago
-3. [ ] Implementar autenticacion de usuarios
-4. [ ] Mejorar version movil de resultados
-5. [ ] Agregar filtros adicionales (precio, duracion)
-6. [ ] Implementar viajes de ida y vuelta
+1. [ ] Agregar pagina de pago/checkout
+2. [ ] Implementar autenticacion de usuarios
+3. [ ] Agregar filtros adicionales (precio, duracion)
+4. [ ] Implementar viajes de ida y vuelta
+5. [ ] Guardar seleccion de asientos en estado global
 
 ---
 
@@ -277,4 +433,47 @@ npx tsc --noEmit
 
 ---
 
-Ultima actualizacion: 20 Enero 2026
+---
+
+## Gestion del Token de API
+
+El sitio usa un token de autenticacion para la API de Reserhub:
+
+### Token Actual:
+```
+Token token=ac1d2715377e5d88e7fffe848034c0b1
+```
+
+### Donde se usa:
+- `src/lib/token-manager.ts` - Gestor centralizado del token
+- `src/app/api/trips/[tripId]/details/route.ts` - API de detalles/asientos
+
+### Si el token deja de funcionar:
+
+**Opcion 1: Actualizar manualmente**
+1. Abre https://viajes.rapidoochoa.com.co en Chrome
+2. Abre DevTools (F12) > Network
+3. Haz una busqueda de viajes y click en "Ver sillas"
+4. Busca peticiones a `one-api.rapidoochoa.com.co`
+5. Copia el header `Authorization: Token token=XXXXXX`
+6. Actualiza el token en `src/lib/token-manager.ts`
+
+**Opcion 2: Usar el API de actualizacion**
+```bash
+# Ver estado actual del token
+curl http://localhost:3000/api/token/refresh
+
+# Actualizar token
+curl -X PUT http://localhost:3000/api/token/refresh \
+  -H "Content-Type: application/json" \
+  -d '{"token": "nuevo_token_aqui"}'
+```
+
+### Caracteristicas del Token:
+- Es un API key estatico del tenant Rapido Ochoa
+- Probablemente no cambia frecuentemente
+- Es publico (visible en el frontend del sitio original)
+
+---
+
+Ultima actualizacion: 20 Enero 2026 - Mapa de asientos rediseñado (layout horizontal igual al original)

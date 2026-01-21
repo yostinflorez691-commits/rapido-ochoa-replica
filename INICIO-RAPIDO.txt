@@ -29,6 +29,8 @@ http://localhost:3000
 [COMPLETADO] Diseño responsive (movil y desktop)
 [COMPLETADO] Autocompletado de terminales (API real)
 [COMPLETADO] Filtros por horario
+[COMPLETADO] Seleccion de asientos (Ver sillas)
+[COMPLETADO] Mapa de asientos horizontal (igual al original)
 
 ============================================
    MEJORAS VISUALES RECIENTES (20 Ene)
@@ -52,6 +54,9 @@ http://localhost:3000
 Pagina de resultados (PRINCIPAL):
   src/app/search/[origin]/[destination]/[date]/p/[passengers]/departures/page.tsx
 
+Mapa de asientos:
+  src/components/sections/seat-map.tsx
+
 Formulario de busqueda:
   src/components/sections/search-form.tsx
 
@@ -60,6 +65,12 @@ Header/Logo:
 
 API Proxy (busquedas):
   src/app/api/search/route.ts
+
+API Proxy (asientos):
+  src/app/api/trips/[tripId]/details/route.ts
+
+Token de API:
+  src/lib/token-manager.ts
 
 Pagina principal:
   src/app/page.tsx
@@ -92,6 +103,36 @@ Si la API no responde:
   - Verificar conexion a internet
   - Revisar consola del navegador
 
+
+============================================
+     SELECCION DE ASIENTOS (VER SILLAS)
+============================================
+
+Componente: src/components/sections/seat-map.tsx
+
+Diseño del mapa:
+  - Layout HORIZONTAL (vista desde arriba del bus)
+  - Panel derecho con leyenda y precio
+  - Boton "Elige al menos 1 silla"
+
+Estados de asientos:
+  - Blanco/gris: Disponible
+  - Rojo: Seleccionado
+  - Icono persona: Ocupado
+
+API Proxy: src/app/api/trips/[tripId]/details/route.ts
+
+Token de autenticacion:
+  - Archivo: src/lib/token-manager.ts
+  - Token actual: ac1d2715377e5d88e7fffe848034c0b1
+
+Si el token falla:
+  1. Ve a https://viajes.rapidoochoa.com.co
+  2. Abre DevTools > Network
+  3. Busca header "Authorization" en peticiones
+  4. Actualiza token en token-manager.ts
+
+Ver documentacion completa en INSTRUCCIONES-PROYECTO.md
 
 ============================================
          DOCUMENTACION COMPLETA

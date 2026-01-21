@@ -8,20 +8,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft,
   ChevronRight,
-  Search,
-  User,
   ArrowRightLeft,
-  Sun,
-  Moon,
-  Sunrise,
   Loader2,
   X,
   SlidersHorizontal,
   MapPin,
-  Bus,
-  Flame,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SeatMap from "@/components/sections/seat-map";
 
 // API Trip data interface
 interface ApiTrip {
@@ -147,6 +141,36 @@ const isNightTime = (isoString: string): boolean => {
   return hours >= 18 || hours < 5;
 };
 
+// Get time of day icon based on departure time
+const getTimeIcon = (time: string) => {
+  const hour = parseInt(time.split(':')[0]);
+  const isPM = time.toUpperCase().includes('PM');
+  const hour24 = isPM && hour !== 12 ? hour + 12 : (!isPM && hour === 12 ? 0 : hour);
+
+  // Noche/Madrugada (20:00 - 05:59) - Luna
+  if (hour24 >= 20 || hour24 < 6) {
+    return (
+      <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+      </svg>
+    );
+  }
+  // Mañana (06:00 - 11:59) - Sol con rayos
+  if (hour24 >= 6 && hour24 < 12) {
+    return (
+      <svg className="h-5 w-5 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+      </svg>
+    );
+  }
+  // Tarde (12:00 - 19:59) - Sol simple
+  return (
+    <svg className="h-5 w-5 text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="5"/>
+    </svg>
+  );
+};
+
 // Convert API trip to internal format
 const apiTripToBusTrip = (
   apiTrip: ApiTrip,
@@ -210,6 +234,7 @@ export default function SearchResultsPage() {
   const [trips, setTrips] = useState<BusTrip[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [timeFilter, setTimeFilter] = useState<string | null>(null);
+  const [expandedTripId, setExpandedTripId] = useState<string | null>(null);
 
   const origin = decodeURIComponent(params.origin as string);
   const destination = decodeURIComponent(params.destination as string);
@@ -312,9 +337,9 @@ export default function SearchResultsPage() {
     const hour24 = isPM && hour !== 12 ? hour + 12 : (!isPM && hour === 12 ? 0 : hour);
 
     switch (timeFilter) {
-      case 'manana': return hour24 >= 5 && hour24 < 12;
+      case 'manana': return hour24 >= 6 && hour24 < 12;
       case 'tarde': return hour24 >= 12 && hour24 < 18;
-      case 'noche': return hour24 >= 18 || hour24 < 5;
+      case 'noche': return hour24 >= 18 || hour24 < 6;
       default: return true;
     }
   });
@@ -339,41 +364,47 @@ export default function SearchResultsPage() {
   return (
     <div className="min-h-screen bg-[#f8f8f8]">
       {/* ============ MOBILE HEADER ============ */}
-      <header className="bg-[#c41e3a] md:hidden">
-        <div className="flex h-[56px] items-center justify-between px-4">
+      <header className="bg-[#B42121] md:hidden">
+        <div className="flex h-[60px] items-center justify-between px-4">
           {/* Back Button */}
           <button onClick={() => router.back()} className="flex h-10 w-10 items-center justify-center text-white">
             <ChevronLeft className="h-6 w-6" />
           </button>
 
           {/* Change Search Button */}
-          <button className="flex items-center gap-2 rounded-full bg-[#a31830] px-4 py-2 text-[13px] font-medium text-white">
+          <button className="flex items-center gap-2 rounded-full bg-[#8a1919] px-4 py-2 text-[13px] font-medium text-white">
             Cambiar búsqueda
           </button>
 
-          {/* Search Icon */}
-          <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4a9c4e] text-white">
-            <Search className="h-5 w-5" />
+          {/* Search Icon - borde blanco, sin fondo */}
+          <button className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-transparent transition-colors hover:bg-white/10">
+            <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
           </button>
 
-          {/* User Icon */}
-          <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d4a855] text-[#3d3d3d]">
-            <User className="h-5 w-5" />
+          {/* User Icon - fondo rojo con icono gris */}
+          <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#B42121] p-1 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="flex h-full w-full items-center justify-center rounded-full bg-[#B42121]">
+              <svg className="h-6 w-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
           </button>
         </div>
       </header>
 
       {/* ============ DESKTOP HEADER ============ */}
-      <header className="hidden bg-[#c41e3a] md:block">
+      <header className="hidden bg-[#B42121] md:block">
         <div className="mx-auto flex h-[60px] max-w-7xl items-center justify-between px-4">
-          {/* Logo */}
+          {/* Logo - versión blanca */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/logo.png"
-              alt="Rapido Ochoa"
-              width={150}
-              height={40}
-              className="h-[40px] w-auto"
+              src="/images/logo-white.png"
+              alt="Rapido Ochoa - Transportamos tus ilusiones"
+              width={180}
+              height={36}
+              className="h-[36px] w-[180px] object-contain"
               priority
             />
           </Link>
@@ -383,19 +414,19 @@ export default function SearchResultsPage() {
             ¡Bienvenido a Rápido Ochoa!
           </span>
 
-          {/* Login Button */}
-          <button className="flex items-center gap-2 rounded-full bg-[#3d3d3d] px-5 py-2.5 text-[13px] text-white transition-colors hover:bg-[#4a4a4a]">
-            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#d4a855] text-[#3d3d3d]">
-              <User className="h-3 w-3" />
-            </div>
-            <span>Iniciar sesión</span>
+          {/* Login Button - sin fondo verde en icono */}
+          <button className="flex items-center gap-2 rounded-full bg-neutral-700/70 px-3 py-1.5 text-white transition-colors hover:bg-neutral-700/80">
+            <svg className="h-5 w-5 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <span className="text-sm font-medium">Iniciar sesión</span>
           </button>
         </div>
       </header>
 
       {/* ============ DESKTOP SEARCH BAR ============ */}
-      <div className="hidden bg-[#c41e3a] px-4 py-3 md:block">
-        <div className="mx-auto flex max-w-[1100px] items-center rounded-full bg-white p-1 shadow-lg">
+      <div className="hidden bg-[#f8f8f8] px-4 py-4 md:block">
+        <div className="mx-auto flex max-w-[1100px] items-center rounded-full bg-white p-1 shadow-[0_2px_8px_rgba(0,0,0,0.1)]">
           {/* Origin */}
           <div className="flex flex-1 items-center gap-2 px-4 py-2.5">
             <MapPin className="h-4 w-4 flex-shrink-0 fill-[#4a9c4e] text-[#4a9c4e]" />
@@ -441,7 +472,9 @@ export default function SearchResultsPage() {
 
           {/* Search Button */}
           <button className="mr-1 flex items-center gap-2 rounded-full bg-[#4a9c4e] px-8 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#3d8b40]">
-            <Search className="h-4 w-4" />
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
             <span>Buscar</span>
           </button>
         </div>
@@ -455,21 +488,29 @@ export default function SearchResultsPage() {
             <div className="-mx-4 flex items-center gap-2 overflow-x-auto px-4 pb-3 scrollbar-hide">
               <button
                 onClick={() => setTimeFilter(null)}
-                className="relative flex flex-shrink-0 items-center gap-1.5 rounded-full bg-[#4a9c4e] px-4 py-2 text-[13px] font-medium text-white"
+                className="relative flex flex-shrink-0 items-center gap-1.5 rounded-full bg-[#1F8641] px-4 py-2 text-[13px] font-medium text-white"
               >
                 <SlidersHorizontal className="h-3.5 w-3.5" />
                 Personalizar búsqueda
-                <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#c41e3a] text-[10px] font-bold text-white">
+                <span className="absolute -right-1 -top-1 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-red-500 px-1.5 text-[10px] font-bold text-white">
                   0
                 </span>
               </button>
+
+              {/* Flecha izquierda */}
+              <button className="flex-shrink-0 p-1 text-gray-400">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
+              </button>
+
               <button
                 onClick={() => setTimeFilter(timeFilter === 'manana' ? null : 'manana')}
                 className={cn(
-                  "flex-shrink-0 rounded-full px-4 py-2 text-[13px] font-medium",
+                  "flex-shrink-0 rounded-[10px] px-3 py-2 text-[13px] font-medium",
                   timeFilter === 'manana'
-                    ? "border-2 border-[#333] bg-white text-[#333]"
-                    : "border border-[#e0e0e0] bg-white text-[#666]"
+                    ? "bg-gray-200 text-gray-800"
+                    : "bg-gray-100 text-gray-700"
                 )}
               >
                 Mañana
@@ -477,10 +518,10 @@ export default function SearchResultsPage() {
               <button
                 onClick={() => setTimeFilter(timeFilter === 'tarde' ? null : 'tarde')}
                 className={cn(
-                  "flex-shrink-0 rounded-full px-4 py-2 text-[13px] font-medium",
+                  "flex-shrink-0 rounded-[10px] px-3 py-2 text-[13px] font-medium",
                   timeFilter === 'tarde'
-                    ? "border-2 border-[#333] bg-white text-[#333]"
-                    : "border border-[#e0e0e0] bg-white text-[#666]"
+                    ? "bg-gray-200 text-gray-800"
+                    : "bg-gray-100 text-gray-700"
                 )}
               >
                 Tarde
@@ -488,13 +529,20 @@ export default function SearchResultsPage() {
               <button
                 onClick={() => setTimeFilter(timeFilter === 'noche' ? null : 'noche')}
                 className={cn(
-                  "flex-shrink-0 rounded-full px-4 py-2 text-[13px] font-medium",
+                  "flex-shrink-0 rounded-[10px] px-3 py-2 text-[13px] font-medium",
                   timeFilter === 'noche'
-                    ? "border-2 border-[#333] bg-white text-[#333]"
-                    : "border border-[#e0e0e0] bg-white text-[#666]"
+                    ? "bg-gray-200 text-gray-800"
+                    : "bg-gray-100 text-gray-700"
                 )}
               >
                 Noche
+              </button>
+
+              {/* Flecha derecha */}
+              <button className="flex-shrink-0 p-1 text-gray-400">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
               </button>
             </div>
             <h1 className="text-[15px] text-[#333]">
@@ -512,46 +560,64 @@ export default function SearchResultsPage() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setTimeFilter(null)}
-                className="relative flex items-center gap-1.5 rounded-full bg-[#4a9c4e] px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#3d8b40]"
+                className="relative flex items-center gap-1.5 rounded-full bg-[#1F8641] px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#1a7339]"
               >
                 <SlidersHorizontal className="h-3.5 w-3.5" />
                 Personalizar búsqueda
-                <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#c41e3a] text-[10px] font-bold text-white">
+                <span className="absolute -right-1 -top-1 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-red-500 px-1.5 text-[10px] font-bold text-white">
                   0
                 </span>
               </button>
-              <button
-                onClick={() => setTimeFilter(timeFilter === 'manana' ? null : 'manana')}
-                className={cn(
-                  "rounded-full px-4 py-2 text-[13px] font-medium transition-colors",
-                  timeFilter === 'manana'
-                    ? "border-2 border-[#333] bg-white text-[#333]"
-                    : "border border-[#e0e0e0] bg-white text-[#666] hover:border-[#ccc]"
-                )}
-              >
-                Mañana
+
+              {/* Flecha izquierda */}
+              <button className="p-1 text-gray-400 transition-colors hover:text-gray-600">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
               </button>
-              <button
-                onClick={() => setTimeFilter(timeFilter === 'tarde' ? null : 'tarde')}
-                className={cn(
-                  "rounded-full px-4 py-2 text-[13px] font-medium transition-colors",
-                  timeFilter === 'tarde'
-                    ? "border-2 border-[#333] bg-white text-[#333]"
-                    : "border border-[#e0e0e0] bg-white text-[#666] hover:border-[#ccc]"
-                )}
-              >
-                Tarde
-              </button>
-              <button
-                onClick={() => setTimeFilter(timeFilter === 'noche' ? null : 'noche')}
-                className={cn(
-                  "rounded-full px-4 py-2 text-[13px] font-medium transition-colors",
-                  timeFilter === 'noche'
-                    ? "border-2 border-[#333] bg-white text-[#333]"
-                    : "border border-[#e0e0e0] bg-white text-[#666] hover:border-[#ccc]"
-                )}
-              >
-                Noche
+
+              {/* Filtros de tiempo */}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setTimeFilter(timeFilter === 'manana' ? null : 'manana')}
+                  className={cn(
+                    "rounded-[10px] px-3 py-2 text-[13px] font-medium transition-colors",
+                    timeFilter === 'manana'
+                      ? "bg-gray-200 text-gray-800"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  )}
+                >
+                  Mañana
+                </button>
+                <button
+                  onClick={() => setTimeFilter(timeFilter === 'tarde' ? null : 'tarde')}
+                  className={cn(
+                    "rounded-[10px] px-3 py-2 text-[13px] font-medium transition-colors",
+                    timeFilter === 'tarde'
+                      ? "bg-gray-200 text-gray-800"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  )}
+                >
+                  Tarde
+                </button>
+                <button
+                  onClick={() => setTimeFilter(timeFilter === 'noche' ? null : 'noche')}
+                  className={cn(
+                    "rounded-[10px] px-3 py-2 text-[13px] font-medium transition-colors",
+                    timeFilter === 'noche'
+                      ? "bg-gray-200 text-gray-800"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  )}
+                >
+                  Noche
+                </button>
+              </div>
+
+              {/* Flecha derecha */}
+              <button className="p-1 text-gray-400 transition-colors hover:text-gray-600">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
               </button>
             </div>
           </div>
@@ -562,7 +628,7 @@ export default function SearchResultsPage() {
       <div className="mx-auto max-w-[1100px] px-4 pb-8">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="h-12 w-12 animate-spin text-[#c41e3a]" />
+            <Loader2 className="h-12 w-12 animate-spin text-[#B42121]" />
             <p className="mt-4 text-[#666]">Buscando los mejores viajes...</p>
           </div>
         ) : (
@@ -571,7 +637,7 @@ export default function SearchResultsPage() {
             {filteredTrips.length > 0 && (
               <div className="mb-4 mt-6 flex items-center gap-2">
                 <h2 className="text-[15px] font-semibold text-[#333]">Viajes recomendados</h2>
-                <span className="rounded bg-[#c41e3a] px-2 py-0.5 text-[10px] font-bold text-white">
+                <span className="rounded bg-[#B42121] px-2 py-0.5 text-[10px] font-bold text-white">
                   PARA TI
                 </span>
                 <span className="text-[#f59e0b]">✦</span>
@@ -588,21 +654,29 @@ export default function SearchResultsPage() {
                   transition={{ duration: 0.2, delay: index * 0.03 }}
                   whileHover={{ y: -2, transition: { duration: 0.2 } }}
                   className={cn(
-                    "relative cursor-pointer overflow-hidden rounded-lg border bg-white shadow-sm transition-all duration-200 hover:shadow-lg",
-                    trip.isPopular ? "border-[#f97316]" : "border-[#e8e8e8]"
+                    "relative cursor-pointer overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-200 hover:shadow-lg",
+                    trip.isPopular ? "border-l-4 border-l-[#f97316] border-y border-r border-y-[#e8e8e8] border-r-[#e8e8e8]" : "border border-[#e8e8e8]"
                   )}
                 >
                   {/* ============ MOBILE CARD ============ */}
-                  <div className="p-4 md:hidden">
+                  <div className="relative p-4 pt-6 md:hidden">
+                    {/* Popular Badge - Mobile */}
+                    {trip.isPopular && (
+                      <div className="absolute left-0 top-0 z-10 flex items-center gap-1 rounded-br-lg bg-gradient-to-r from-orange-500 to-orange-400 px-3 py-1 text-[11px] font-semibold text-white">
+                        <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 23c-4.97 0-9-4.03-9-9 0-4.17 2.56-7.75 6.2-9.23.18-.07.38-.1.58-.1.55 0 1 .45 1 1v1.42c0 .14.1.26.2.35C14.68 9.25 17.1 12.83 17.1 17c0 3.31-2.69 6-6 6h-.1z"/>
+                        </svg>
+                        <span>Popular</span>
+                      </div>
+                    )}
+
                     {/* Top Row: Time icon + Departure + Direct + Arrival */}
                     <div className="mb-3 flex items-start justify-between">
                       <div className="flex items-start gap-3">
                         {/* Time Icon */}
-                        {trip.isNight ? (
-                          <Moon className="mt-1 h-5 w-5 text-[#6366f1]" />
-                        ) : (
-                          <Sun className="mt-1 h-5 w-5 text-[#f59e0b]" />
-                        )}
+                        <div className="mt-0.5">
+                          {getTimeIcon(trip.departureTime)}
+                        </div>
                         {/* Departure */}
                         <div>
                           <p className="text-[18px] font-bold text-[#333]">{trip.departureTime}</p>
@@ -627,26 +701,28 @@ export default function SearchResultsPage() {
                     <div className="mb-3 flex items-center justify-between border-t border-[#f0f0f0] pt-3">
                       {/* Company Logo */}
                       <div>
-                        {trip.isLuxury ? (
-                          <span className="text-[9px] italic text-[#c41e3a]">De Primera</span>
+                        {trip.logoUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={trip.logoUrl}
+                            alt={trip.company}
+                            className="h-8 w-auto object-contain"
+                          />
                         ) : (
-                          <div className="mb-0.5 inline-block rounded bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] px-1.5 py-0.5">
-                            <span className="text-[8px] font-bold italic text-white">Lo Máximo!</span>
+                          <div className="flex items-center gap-1">
+                            <span className="text-[13px] font-black tracking-tight">
+                              <span className="text-[#B42121]">REY </span>
+                              <span className="bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">DORADO</span>
+                            </span>
                           </div>
                         )}
-                        <div className="flex items-center gap-1">
-                          <span className="text-[13px] font-black tracking-tight">
-                            <span className="text-[#c41e3a]">REY </span>
-                            <span className="bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">DORADO</span>
-                          </span>
-                          <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
-                            <path d="M9 12l2 2 4-4" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <circle cx="12" cy="12" r="9" stroke="#22c55e" strokeWidth="2"/>
-                          </svg>
-                        </div>
-                        <p className="text-[10px] text-[#888]">
-                          {trip.isLuxury ? 'Rey Dorado de Primera [VIP]' : 'Rey Dorado - Lo máximo'}
+                        <p className="mt-1 text-[10px] text-[#888]">
+                          {trip.company} {trip.companySlogan && `- ${trip.companySlogan}`}
                         </p>
+                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] hover:underline">
+                          Ver detalles
+                        </button>
+                        <p className="text-[10px] text-[#888]">{trip.duration}</p>
                       </div>
 
                       {/* Price */}
@@ -657,84 +733,82 @@ export default function SearchResultsPage() {
                       </div>
                     </div>
 
-                    {/* Bottom Row: Details + Button */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <button className="text-[12px] font-medium text-[#4a9c4e] underline transition-colors hover:text-[#3d8b40]">
-                          Ver detalles
-                        </button>
-                        <span className="text-[12px] text-[#888]">{trip.duration}</span>
-                      </div>
-                      <button className="rounded-full border-2 border-[#c41e3a] bg-white px-5 py-2 text-[13px] font-semibold text-[#c41e3a] transition-all duration-200 hover:scale-105 hover:bg-[#c41e3a] hover:text-white active:scale-95">
-                        Ver sillas
+                    {/* Bottom Row: Button */}
+                    <div className="flex items-center justify-end">
+                      <button
+                        onClick={() => setExpandedTripId(expandedTripId === trip.id ? null : trip.id)}
+                        className={cn(
+                          "rounded-full px-5 py-2 text-[13px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
+                          expandedTripId === trip.id
+                            ? "bg-[#B42121] text-white"
+                            : "border-2 border-[#B42121] bg-white text-[#B42121] hover:bg-[#B42121] hover:text-white"
+                        )}
+                      >
+                        {expandedTripId === trip.id ? "Cerrar" : "Ver sillas"}
                       </button>
                     </div>
+
+                    {/* Seat Map - Mobile */}
+                    <AnimatePresence>
+                      {expandedTripId === trip.id && (
+                        <SeatMap
+                          tripId={trip.id}
+                          price={trip.price}
+                          departureTime={trip.departureTime}
+                          arrivalTime={trip.arrivalTime}
+                          date={getFullDateDisplay(date)}
+                          isDirect={trip.isDirect}
+                          origin={trip.originTerminal}
+                          destination={trip.destinationTerminal}
+                          service={trip.company}
+                          onClose={() => setExpandedTripId(null)}
+                        />
+                      )}
+                    </AnimatePresence>
                   </div>
 
                   {/* ============ DESKTOP CARD ============ */}
                   <div className="hidden md:block">
                     {/* Popular Badge with flame */}
                     {trip.isPopular && (
-                      <div className="absolute -left-1 top-3">
-                        <div className="relative flex items-center">
-                          <Flame className="absolute -left-3 -top-2 h-6 w-6 fill-[#f97316] text-[#f97316]" />
-                          <div className="rounded-r-md bg-gradient-to-r from-[#f97316] to-[#fb923c] px-3 py-1 pl-4 text-[11px] font-bold text-white shadow-sm">
-                            Popular
-                          </div>
-                        </div>
+                      <div className="absolute left-0 top-0 z-10 flex items-center gap-1 rounded-br-lg bg-gradient-to-r from-orange-500 to-orange-400 px-3 py-1 text-[11px] font-semibold text-white">
+                        <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 23c-4.97 0-9-4.03-9-9 0-4.17 2.56-7.75 6.2-9.23.18-.07.38-.1.58-.1.55 0 1 .45 1 1v1.42c0 .14.1.26.2.35C14.68 9.25 17.1 12.83 17.1 17c0 3.31-2.69 6-6 6h-.1z"/>
+                        </svg>
+                        <span>Popular</span>
                       </div>
                     )}
 
-                    <div className="flex items-center px-5 py-4">
-                      {/* Company Info - REY DORADO Logo */}
+                    <div className="flex items-center px-5 py-4 pt-6">
+                      {/* Company Info - Logo from API */}
                       <div className="w-[180px] flex-shrink-0 pl-2">
-                        {trip.isLuxury ? (
-                          <>
-                            <span className="text-[9px] italic text-[#c41e3a]">De Primera</span>
-                            <div className="flex items-center gap-1">
-                              <span className="text-[14px] font-black tracking-tight">
-                                <span className="text-[#c41e3a]">REY </span>
-                                <span className="bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">DORADO</span>
-                              </span>
-                              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 12l2 2 4-4" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                <circle cx="12" cy="12" r="9" stroke="#22c55e" strokeWidth="2"/>
-                              </svg>
-                            </div>
-                            <p className="text-[10px] text-[#888]">Rey Dorado de Primera</p>
-                            <p className="text-[10px] font-medium text-[#666]">[VIP]</p>
-                          </>
+                        {trip.logoUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={trip.logoUrl}
+                            alt={trip.company}
+                            className="h-10 w-auto object-contain"
+                          />
                         ) : (
-                          <>
-                            <div className="mb-0.5 inline-block rounded bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] px-1.5 py-0.5">
-                              <span className="text-[8px] font-bold italic text-white">Lo Máximo!</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <span className="text-[14px] font-black tracking-tight">
-                                <span className="text-[#c41e3a]">REY </span>
-                                <span className="bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">DORADO</span>
-                              </span>
-                              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 12l2 2 4-4" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                <circle cx="12" cy="12" r="9" stroke="#22c55e" strokeWidth="2"/>
-                              </svg>
-                            </div>
-                            <p className="text-[10px] text-[#888]">Rey Dorado - Lo máximo</p>
-                          </>
+                          <div className="flex items-center gap-1">
+                            <span className="text-[14px] font-black tracking-tight">
+                              <span className="text-[#B42121]">REY </span>
+                              <span className="bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">DORADO</span>
+                            </span>
+                          </div>
                         )}
+                        <p className="mt-1 text-[10px] text-[#888]">
+                          {trip.company} {trip.companySlogan && `- ${trip.companySlogan}`}
+                        </p>
+                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] hover:underline">
+                          Ver detalles
+                        </button>
+                        <p className="text-[10px] text-[#888]">{trip.duration}</p>
                       </div>
 
                       {/* Time Icon */}
                       <div className="mx-3 flex-shrink-0">
-                        {trip.isNight ? (
-                          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#e0e7ff]">
-                            <Moon className="h-4 w-4 fill-[#6366f1] text-[#6366f1]" />
-                          </div>
-                        ) : (
-                          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#fef3c7]">
-                            <Sun className="h-4 w-4 fill-[#f59e0b] text-[#f59e0b]" />
-                          </div>
-                        )}
+                        {getTimeIcon(trip.departureTime)}
                       </div>
 
                       {/* Departure */}
@@ -759,14 +833,6 @@ export default function SearchResultsPage() {
                         <p className="text-[11px] text-[#888]">{trip.destinationTerminal}</p>
                       </div>
 
-                      {/* Duration & Details */}
-                      <div className="mx-3 w-[80px] flex-shrink-0 text-right">
-                        <p className="text-[12px] text-[#888]">{trip.duration}</p>
-                        <button className="text-[12px] font-medium text-[#4a9c4e] underline hover:text-[#3d8b40]">
-                          Ver detalles
-                        </button>
-                      </div>
-
                       {/* Price */}
                       <div className="mx-3 w-[130px] flex-shrink-0 text-right">
                         <p className="text-[20px] font-bold text-[#333]">
@@ -776,15 +842,38 @@ export default function SearchResultsPage() {
                       </div>
 
                       {/* Action Button */}
-                      <button className={cn(
-                        "ml-2 flex-shrink-0 whitespace-nowrap rounded-full px-6 py-2.5 text-[13px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
-                        trip.isPopular
-                          ? "bg-[#c41e3a] text-white hover:bg-[#a31830] hover:shadow-md"
-                          : "border-2 border-[#c41e3a] bg-white text-[#c41e3a] hover:bg-[#c41e3a] hover:text-white hover:shadow-md"
-                      )}>
-                        Ver sillas
+                      <button
+                        onClick={() => setExpandedTripId(expandedTripId === trip.id ? null : trip.id)}
+                        className={cn(
+                          "ml-2 flex-shrink-0 whitespace-nowrap rounded-full px-6 py-2.5 text-[13px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
+                          expandedTripId === trip.id
+                            ? "bg-[#B42121] text-white hover:bg-[#8a1919] hover:shadow-md"
+                            : trip.isPopular
+                            ? "bg-[#B42121] text-white hover:bg-[#8a1919] hover:shadow-md"
+                            : "border-2 border-[#B42121] bg-white text-[#B42121] hover:bg-[#B42121] hover:text-white hover:shadow-md"
+                        )}
+                      >
+                        {expandedTripId === trip.id ? "Cerrar" : "Ver sillas"}
                       </button>
                     </div>
+
+                    {/* Seat Map - Desktop */}
+                    <AnimatePresence>
+                      {expandedTripId === trip.id && (
+                        <SeatMap
+                          tripId={trip.id}
+                          price={trip.price}
+                          departureTime={trip.departureTime}
+                          arrivalTime={trip.arrivalTime}
+                          date={getFullDateDisplay(date)}
+                          isDirect={trip.isDirect}
+                          origin={trip.originTerminal}
+                          destination={trip.destinationTerminal}
+                          service={trip.company}
+                          onClose={() => setExpandedTripId(null)}
+                        />
+                      )}
+                    </AnimatePresence>
                   </div>
                 </motion.div>
               ))}
@@ -794,7 +883,7 @@ export default function SearchResultsPage() {
             <div className="mt-8">
               {/* Mobile Date Nav */}
               <div className="flex items-center justify-center gap-1 md:hidden">
-                <button className="flex h-8 w-8 items-center justify-center rounded-full border border-[#c41e3a] text-[#c41e3a] transition-all duration-200 hover:bg-[#c41e3a] hover:text-white active:scale-95">
+                <button className="flex h-8 w-8 items-center justify-center rounded-full border border-[#B42121] text-[#B42121] transition-all duration-200 hover:bg-[#B42121] hover:text-white active:scale-95">
                   <ChevronLeft className="h-4 w-4" />
                 </button>
 
@@ -813,7 +902,7 @@ export default function SearchResultsPage() {
                   </div>
                 </div>
 
-                <button className="flex h-8 w-8 items-center justify-center rounded-full border border-[#c41e3a] text-[#c41e3a] transition-all duration-200 hover:bg-[#c41e3a] hover:text-white active:scale-95">
+                <button className="flex h-8 w-8 items-center justify-center rounded-full border border-[#B42121] text-[#B42121] transition-all duration-200 hover:bg-[#B42121] hover:text-white active:scale-95">
                   <ChevronRight className="h-4 w-4" />
                 </button>
               </div>
@@ -850,7 +939,7 @@ export default function SearchResultsPage() {
               <div className="flex items-center gap-2 text-[13px] text-[#999]">
                 <span>Powered by</span>
                 <span className="inline-flex items-center text-[16px] font-bold tracking-tight">
-                  <span className="bg-gradient-to-r from-[#c41e3a] to-[#e63950] bg-clip-text text-transparent">Reser</span>
+                  <span className="bg-gradient-to-r from-[#B42121] to-[#e63950] bg-clip-text text-transparent">Reser</span>
                   <span className="text-[#333]">hub</span>
                 </span>
               </div>
