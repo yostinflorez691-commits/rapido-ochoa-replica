@@ -267,8 +267,8 @@ export function SeatMap({
       className="relative border-t border-[#e8e8e8] bg-white"
     >
       {/* Header del Modal */}
-      <div className="flex items-center justify-between border-b border-[#E6E6E6] px-5 py-4">
-        <h2 className="text-[18px] font-semibold text-[#232323]">
+      <div className="flex items-center justify-between border-b border-[#E6E6E6] px-3 sm:px-5 py-3 sm:py-4">
+        <h2 className="text-[16px] sm:text-[18px] font-semibold text-[#232323]">
           Elige tus sillas de ida
         </h2>
         {/* Botón X Cerrar - Verde */}
@@ -284,105 +284,104 @@ export function SeatMap({
       </div>
 
       {/* Barra de información del viaje */}
-      <div className="flex items-center gap-3 bg-[#F8F8F8] px-5 py-3">
+      <div className="flex items-center gap-2 sm:gap-3 bg-[#F8F8F8] px-3 sm:px-5 py-2 sm:py-3 flex-wrap sm:flex-nowrap">
         {/* Icono sol/luna */}
         {getTimeIcon()}
         {/* Hora salida */}
-        <span className="text-[14px] font-semibold text-[#232323]">{departureTime}</span>
+        <span className="text-[12px] sm:text-[14px] font-semibold text-[#232323]">{departureTime}</span>
         {/* Tipo de ruta */}
-        <span className="text-[13px] text-[#999999]">
-          — {isDirect ? 'Directo' : 'Con escala'} —&gt;
+        <span className="text-[11px] sm:text-[13px] text-[#999999]">
+          — {isDirect ? 'Directo' : 'Con escala'} →
         </span>
         {/* Hora llegada */}
-        <span className="text-[14px] font-semibold text-[#232323]">{arrivalTime}</span>
+        <span className="text-[12px] sm:text-[14px] font-semibold text-[#232323]">{arrivalTime}</span>
         {/* Fecha */}
-        <span className="ml-auto text-[13px] text-[#666666]">{date}</span>
+        <span className="ml-auto text-[11px] sm:text-[13px] text-[#666666]">{date}</span>
       </div>
 
       {/* Bus Section: Legend + Seats */}
-      <div className="flex gap-3 p-5">
+      <div className="flex flex-col sm:flex-row gap-3 p-3 sm:p-5">
 
-        {/* Legend Panel (izquierda) */}
-        <div className="flex w-[70px] flex-shrink-0 flex-col gap-3 py-2">
-          <h4 className="text-[12px] font-semibold text-[#232323]">Tus sillas</h4>
+        {/* Legend Panel - horizontal en móvil, vertical en desktop */}
+        <div className="flex sm:flex-col sm:w-[70px] flex-shrink-0 gap-4 sm:gap-3 py-2 justify-center sm:justify-start">
+          <h4 className="hidden sm:block text-[12px] font-semibold text-[#232323]">Tus sillas</h4>
 
           {/* Libres */}
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-row sm:flex-col items-center gap-1">
             <div
-              className="h-[17px] w-[17px] rounded-full border border-[#CCCCCC] bg-white"
+              className="h-[15px] w-[15px] sm:h-[17px] sm:w-[17px] rounded-full border border-[#CCCCCC] bg-white"
             />
-            <span className="text-[11px] text-[#666666]">{free} Libres</span>
+            <span className="text-[10px] sm:text-[11px] text-[#666666]">{free} Libres</span>
           </div>
 
           {/* Elegidos */}
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-row sm:flex-col items-center gap-1">
             <div
-              className="h-[17px] w-[17px] rounded-full bg-[#B42121]"
+              className="h-[15px] w-[15px] sm:h-[17px] sm:w-[17px] rounded-full bg-[#B42121]"
             />
-            <span className="text-[11px] text-[#666666]">{selectedSeats.length} Elegidos</span>
+            <span className="text-[10px] sm:text-[11px] text-[#666666]">{selectedSeats.length} Elegidos</span>
           </div>
 
           {/* Ocupados */}
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-row sm:flex-col items-center gap-1">
             <div
-              className="flex h-[25px] w-[25px] items-center justify-center rounded-[4px] bg-[#E6E6E6]"
+              className="flex h-[20px] w-[20px] sm:h-[25px] sm:w-[25px] items-center justify-center rounded-[4px] bg-[#E6E6E6]"
             >
-              <svg className="h-3 w-3 text-[#9B9B9B]" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#9B9B9B]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
               </svg>
             </div>
-            <span className="text-[11px] text-[#666666]">{occupied} Ocupados</span>
+            <span className="text-[10px] sm:text-[11px] text-[#666666]">{occupied} Ocupados</span>
           </div>
         </div>
 
         {/* Vehicle Container (derecha) */}
-        <div className="flex flex-1 flex-col items-center rounded-[10px] bg-white/60 px-3 py-5">
+        <div className="flex flex-1 flex-col items-center rounded-[10px] bg-white/60 px-2 sm:px-3 py-4 sm:py-5 overflow-x-auto">
 
           {/* Steering Wheel Icon */}
-          <div className="mb-4 self-start ml-[43px]">
+          <div className="mb-3 sm:mb-4 self-start ml-[20px] sm:ml-[43px]">
             <svg className="h-[25px] w-[25px] text-[#9B9B9B]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12.5c-2.49 0-4.5 2.01-4.5 4.5h2c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5h2c0-2.49-2.01-4.5-4.5-4.5zM12 14c-.83 0-1.5.67-1.5 1.5S11.17 17 12 17s1.5-.67 1.5-1.5S12.83 14 12 14z"/>
             </svg>
           </div>
 
           {/* Seats Layout */}
-          <div className="flex flex-col gap-[15px]">
+          <div className="flex flex-col gap-[10px] sm:gap-[15px]">
             {rows.map((row, rowIndex) => (
               <div
                 key={rowIndex}
-                className="flex justify-center"
+                className="flex justify-center items-center"
               >
-                {/* Silla 1 (izquierda-ventana) */}
-                <SeatButton
-                  seat={row[0]}
-                  isSelected={selectedSeats.includes(row[0]?.number || '')}
-                  onSelect={toggleSeat}
-                  style={{ marginRight: '43px' }}
-                />
+                {/* Grupo izquierdo (2 sillas) */}
+                <div className="flex gap-1 sm:gap-2">
+                  <SeatButton
+                    seat={row[0]}
+                    isSelected={selectedSeats.includes(row[0]?.number || '')}
+                    onSelect={toggleSeat}
+                  />
+                  <SeatButton
+                    seat={row[1]}
+                    isSelected={selectedSeats.includes(row[1]?.number || '')}
+                    onSelect={toggleSeat}
+                  />
+                </div>
 
-                {/* Silla 2 (izquierda-pasillo) */}
-                <SeatButton
-                  seat={row[1]}
-                  isSelected={selectedSeats.includes(row[1]?.number || '')}
-                  onSelect={toggleSeat}
-                  style={{ marginRight: '132px' }}
-                />
+                {/* Pasillo central */}
+                <div className="w-8 sm:w-16 md:w-24" />
 
-                {/* Silla 3 (derecha-pasillo) */}
-                <SeatButton
-                  seat={row[2]}
-                  isSelected={selectedSeats.includes(row[2]?.number || '')}
-                  onSelect={toggleSeat}
-                  style={{ marginRight: '43px' }}
-                />
-
-                {/* Silla 4 (derecha-ventana) */}
-                <SeatButton
-                  seat={row[3]}
-                  isSelected={selectedSeats.includes(row[3]?.number || '')}
-                  onSelect={toggleSeat}
-                  style={{ marginRight: '0' }}
-                />
+                {/* Grupo derecho (2 sillas) */}
+                <div className="flex gap-1 sm:gap-2">
+                  <SeatButton
+                    seat={row[2]}
+                    isSelected={selectedSeats.includes(row[2]?.number || '')}
+                    onSelect={toggleSeat}
+                  />
+                  <SeatButton
+                    seat={row[3]}
+                    isSelected={selectedSeats.includes(row[3]?.number || '')}
+                    onSelect={toggleSeat}
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -391,12 +390,12 @@ export function SeatMap({
 
       {/* Precio aproximado - Solo mostrar si hay sillas seleccionadas */}
       {selectedSeats.length > 0 && (
-        <div className="border-t border-[#E6E6E6] px-5 py-3">
-          <p className="text-[13px] text-[#666666]">
+        <div className="border-t border-[#E6E6E6] px-3 sm:px-5 py-2 sm:py-3">
+          <p className="text-[12px] sm:text-[13px] text-[#666666]">
             {selectedSeats.length} {selectedSeats.length === 1 ? 'asiento' : 'asientos'}: {selectedSeats.sort((a, b) => parseInt(a) - parseInt(b)).join(', ')}
           </p>
-          <p className="text-[20px] font-bold text-[#B42121]">
-            $ {totalPrice.toLocaleString('es-CO')} <span className="text-[13px] font-normal text-[#666666]">COP</span>
+          <p className="text-[18px] sm:text-[20px] font-bold text-[#B42121]">
+            $ {totalPrice.toLocaleString('es-CO')} <span className="text-[12px] sm:text-[13px] font-normal text-[#666666]">COP</span>
           </p>
         </div>
       )}
@@ -431,16 +430,14 @@ export function SeatMap({
 function SeatButton({
   seat,
   isSelected,
-  onSelect,
-  style
+  onSelect
 }: {
   seat: Seat | null;
   isSelected: boolean;
   onSelect: (number: string) => void;
-  style?: React.CSSProperties;
 }) {
   if (!seat) {
-    return <div className="h-10 w-10" style={style} />;
+    return <div className="h-9 w-9 sm:h-10 sm:w-10" />;
   }
 
   const isOccupied = seat.occupied;
@@ -451,17 +448,16 @@ function SeatButton({
       onClick={() => !isOccupied && seat.number && onSelect(seat.number)}
       disabled={isOccupied}
       className={cn(
-        "flex h-10 w-10 items-center justify-center rounded-lg text-[14px] font-medium transition-all",
+        "flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg text-[12px] sm:text-[14px] font-medium transition-all flex-shrink-0",
         isOccupied
           ? "cursor-not-allowed bg-[#E6E6E6]"
           : isSelected
           ? "bg-[#B42121] text-white shadow-[rgba(177,177,177,0.5)_0px_2px_4px_0px]"
           : "bg-white text-[#9B9B9B] shadow-[rgba(177,177,177,0.5)_0px_2px_4px_0px] hover:scale-105"
       )}
-      style={style}
     >
       {isOccupied ? (
-        <svg className="h-5 w-5 text-[#9B9B9B]" fill="currentColor" viewBox="0 0 24 24">
+        <svg className="h-4 w-4 sm:h-5 sm:w-5 text-[#9B9B9B]" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
         </svg>
       ) : (
