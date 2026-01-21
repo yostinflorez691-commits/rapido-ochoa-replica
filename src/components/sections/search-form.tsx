@@ -483,48 +483,43 @@ export function SearchForm({ className }: SearchFormProps) {
                   <div className="flex h-full flex-col">
                     {/* Modal Header */}
                     <div className="flex items-center justify-between border-b border-[#eee] px-4 py-4">
-                      <h2 className="text-[18px] font-medium text-[#333]">Elige tu origen</h2>
+                      <p className="m-0 text-[20px] font-bold text-[#232323]">Elige tu origen</p>
                       <button
                         type="button"
                         onClick={() => {
                           setShowOriginModal(false);
                           setOriginSearch(selectedOrigin?.displayName || "");
                         }}
-                        className="flex h-8 w-8 items-center justify-center text-[#666]"
+                        className="text-[20px] text-[#c62828]"
                       >
-                        <X className="h-5 w-5" />
+                        ×
                       </button>
                     </div>
 
                     {/* Search Input */}
-                    <div className="border-b border-[#eee] px-4 py-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[12px] text-[#666]">Origen</span>
-                      </div>
-                      <div className="mt-1 flex items-center gap-2">
-                        <MapPin className="h-4 w-4 flex-shrink-0 fill-[#4a9c4e] text-[#4a9c4e]" />
-                        <input
-                          ref={modalOriginInputRef}
-                          type="text"
-                          placeholder="Buscar Origen"
-                          value={originSearch}
-                          onChange={(e) => setOriginSearch(e.target.value)}
-                          onKeyDown={handleOriginKeyDown}
-                          className="flex-1 border-0 bg-transparent text-[14px] text-[#333] placeholder:text-[#999] focus:outline-none"
-                        />
-                        {originSearch && (
-                          <button
-                            type="button"
-                            onClick={() => setOriginSearch("")}
-                            className="text-[#999]"
-                          >
-                            <X className="h-4 w-4" />
-                          </button>
-                        )}
-                        <button type="button" className="text-[#4a9c4e]">
-                          <Search className="h-5 w-5" />
+                    <div className="flex items-center gap-2 border-b border-[#eee] px-4 py-3">
+                      <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                        <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
+                      </svg>
+                      <input
+                        ref={modalOriginInputRef}
+                        type="text"
+                        placeholder="Buscar Origen"
+                        value={originSearch}
+                        onChange={(e) => setOriginSearch(e.target.value)}
+                        onKeyDown={handleOriginKeyDown}
+                        className="flex-1 border-0 bg-transparent text-[16px] text-[#232323] placeholder:text-[#999] focus:outline-none"
+                      />
+                      {originSearch && (
+                        <button
+                          type="button"
+                          onClick={() => setOriginSearch("")}
+                          className="text-[#999]"
+                        >
+                          ×
                         </button>
-                      </div>
+                      )}
+                      <Search className="h-4 w-4 text-[#2e7d32]" />
                     </div>
 
                     {/* Results */}
@@ -534,32 +529,21 @@ export function SearchForm({ className }: SearchFormProps) {
                           key={terminal.id}
                           onClick={() => selectOrigin(terminal)}
                           className={cn(
-                            "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors",
+                            "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors",
                             index === 0
-                              ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
-                              : "border-l-[3px] border-l-transparent hover:bg-[#f5f5f5]"
+                              ? "bg-[rgba(237,237,237,0.5)]"
+                              : "bg-transparent hover:bg-[#f5f5f5]"
                           )}
                         >
                           {/* Ícono de pin de ubicación verde */}
-                          <svg
-                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                          <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                            <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
                           </svg>
 
-                          {/* Contenido del destino en 3 líneas */}
-                          <div className="flex flex-col">
-                            <span className="text-[15px] font-semibold text-[#333]">
-                              {terminal.city},
-                            </span>
-                            <span className="text-[13px] text-[#666]">
-                              {terminal.department}
-                            </span>
-                            <span className="text-[13px] text-[#666]">
-                              {terminal.terminal}
-                            </span>
+                          {/* Texto en formato del original: Ciudad bold + Departamento Terminal */}
+                          <div className="text-[16px] text-[#232323]">
+                            <b>{terminal.city}, </b>
+                            <span>{terminal.department} {terminal.terminal}</span>
                           </div>
                         </li>
                       ))}
@@ -581,48 +565,43 @@ export function SearchForm({ className }: SearchFormProps) {
                   <div className="flex h-full flex-col">
                     {/* Modal Header */}
                     <div className="flex items-center justify-between border-b border-[#eee] px-4 py-4">
-                      <h2 className="text-[18px] font-medium text-[#333]">Elige tu destino</h2>
+                      <p className="m-0 text-[20px] font-bold text-[#232323]">Elige tu destino</p>
                       <button
                         type="button"
                         onClick={() => {
                           setShowDestinationModal(false);
                           setDestinationSearch(selectedDestination?.displayName || "");
                         }}
-                        className="flex h-8 w-8 items-center justify-center text-[#666]"
+                        className="text-[20px] text-[#c62828]"
                       >
-                        <X className="h-5 w-5" />
+                        ×
                       </button>
                     </div>
 
                     {/* Search Input */}
-                    <div className="border-b border-[#eee] px-4 py-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[12px] text-[#666]">Destino</span>
-                      </div>
-                      <div className="mt-1 flex items-center gap-2">
-                        <MapPin className="h-4 w-4 flex-shrink-0 text-[#9ca3af]" />
-                        <input
-                          ref={modalDestinationInputRef}
-                          type="text"
-                          placeholder="Buscar Destino"
-                          value={destinationSearch}
-                          onChange={(e) => setDestinationSearch(e.target.value)}
-                          onKeyDown={handleDestinationKeyDown}
-                          className="flex-1 border-0 bg-transparent text-[14px] text-[#333] placeholder:text-[#999] focus:outline-none"
-                        />
-                        {destinationSearch && (
-                          <button
-                            type="button"
-                            onClick={() => setDestinationSearch("")}
-                            className="text-[#999]"
-                          >
-                            <X className="h-4 w-4" />
-                          </button>
-                        )}
-                        <button type="button" className="text-[#4a9c4e]">
-                          <Search className="h-5 w-5" />
+                    <div className="flex items-center gap-2 border-b border-[#eee] px-4 py-3">
+                      <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                        <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
+                      </svg>
+                      <input
+                        ref={modalDestinationInputRef}
+                        type="text"
+                        placeholder="Buscar Destino"
+                        value={destinationSearch}
+                        onChange={(e) => setDestinationSearch(e.target.value)}
+                        onKeyDown={handleDestinationKeyDown}
+                        className="flex-1 border-0 bg-transparent text-[16px] text-[#232323] placeholder:text-[#999] focus:outline-none"
+                      />
+                      {destinationSearch && (
+                        <button
+                          type="button"
+                          onClick={() => setDestinationSearch("")}
+                          className="text-[#999]"
+                        >
+                          ×
                         </button>
-                      </div>
+                      )}
+                      <Search className="h-4 w-4 text-[#2e7d32]" />
                     </div>
 
                     {/* Results */}
@@ -632,32 +611,21 @@ export function SearchForm({ className }: SearchFormProps) {
                           key={terminal.id}
                           onClick={() => selectDestination(terminal)}
                           className={cn(
-                            "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors",
+                            "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors",
                             index === 0
-                              ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
-                              : "border-l-[3px] border-l-transparent hover:bg-[#f5f5f5]"
+                              ? "bg-[rgba(237,237,237,0.5)]"
+                              : "bg-transparent hover:bg-[#f5f5f5]"
                           )}
                         >
                           {/* Ícono de pin de ubicación verde */}
-                          <svg
-                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                          <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                            <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
                           </svg>
 
-                          {/* Contenido del destino en 3 líneas */}
-                          <div className="flex flex-col">
-                            <span className="text-[15px] font-semibold text-[#333]">
-                              {terminal.city},
-                            </span>
-                            <span className="text-[13px] text-[#666]">
-                              {terminal.department}
-                            </span>
-                            <span className="text-[13px] text-[#666]">
-                              {terminal.terminal}
-                            </span>
+                          {/* Texto en formato del original: Ciudad bold + Departamento Terminal */}
+                          <div className="text-[16px] text-[#232323]">
+                            <b>{terminal.city}, </b>
+                            <span>{terminal.department} {terminal.terminal}</span>
                           </div>
                         </li>
                       ))}
@@ -849,33 +817,20 @@ export function SearchForm({ className }: SearchFormProps) {
                                 key={terminal.id}
                                 onClick={() => selectOrigin(terminal)}
                                 className={cn(
-                                  "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors hover:bg-[#f5f5f5]",
+                                  "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors hover:bg-[#f5f5f5]",
                                   index === originIndex && "bg-[#f0f0f0]",
-                                  index === 0
-                                    ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
-                                    : "border-l-[3px] border-l-transparent"
+                                  index === 0 && "bg-[rgba(237,237,237,0.5)]"
                                 )}
                               >
                                 {/* Ícono de pin de ubicación verde */}
-                                <svg
-                                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
-                                  viewBox="0 0 24 24"
-                                  fill="currentColor"
-                                >
-                                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                                  <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
                                 </svg>
 
-                                {/* Contenido en 3 líneas */}
-                                <div className="flex flex-col">
-                                  <span className="text-[15px] font-semibold text-[#333]">
-                                    {terminal.city},
-                                  </span>
-                                  <span className="text-[13px] text-[#666]">
-                                    {terminal.department}
-                                  </span>
-                                  <span className="text-[13px] text-[#666]">
-                                    {terminal.terminal}
-                                  </span>
+                                {/* Texto en formato del original */}
+                                <div className="text-[16px] text-[#232323]">
+                                  <b>{terminal.city}, </b>
+                                  <span>{terminal.department} {terminal.terminal}</span>
                                 </div>
                               </li>
                             ))}
@@ -985,33 +940,20 @@ export function SearchForm({ className }: SearchFormProps) {
                                 key={terminal.id}
                                 onClick={() => selectDestination(terminal)}
                                 className={cn(
-                                  "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors hover:bg-[#f5f5f5]",
+                                  "flex w-full cursor-pointer items-center gap-3 p-[15px] transition-colors hover:bg-[#f5f5f5]",
                                   index === destinationIndex && "bg-[#f0f0f0]",
-                                  index === 0
-                                    ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
-                                    : "border-l-[3px] border-l-transparent"
+                                  index === 0 && "bg-[rgba(237,237,237,0.5)]"
                                 )}
                               >
                                 {/* Ícono de pin de ubicación verde */}
-                                <svg
-                                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
-                                  viewBox="0 0 24 24"
-                                  fill="currentColor"
-                                >
-                                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
+                                  <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
                                 </svg>
 
-                                {/* Contenido en 3 líneas */}
-                                <div className="flex flex-col">
-                                  <span className="text-[15px] font-semibold text-[#333]">
-                                    {terminal.city},
-                                  </span>
-                                  <span className="text-[13px] text-[#666]">
-                                    {terminal.department}
-                                  </span>
-                                  <span className="text-[13px] text-[#666]">
-                                    {terminal.terminal}
-                                  </span>
+                                {/* Texto en formato del original */}
+                                <div className="text-[16px] text-[#232323]">
+                                  <b>{terminal.city}, </b>
+                                  <span>{terminal.department} {terminal.terminal}</span>
                                 </div>
                               </li>
                             ))}
