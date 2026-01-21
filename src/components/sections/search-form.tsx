@@ -490,7 +490,7 @@ export function SearchForm({ className }: SearchFormProps) {
                           setShowOriginModal(false);
                           setOriginSearch(selectedOrigin?.displayName || "");
                         }}
-                        className="text-[20px] text-[#c62828]"
+                        className="text-[20px] text-[#1F8641]"
                       >
                         ×
                       </button>
@@ -499,7 +499,7 @@ export function SearchForm({ className }: SearchFormProps) {
                     {/* Search Input */}
                     <div className="flex items-center gap-2 border-b border-[#eee] px-4 py-3">
                       <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                        <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
+                        <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#1F8641"/>
                       </svg>
                       <input
                         ref={modalOriginInputRef}
@@ -519,7 +519,7 @@ export function SearchForm({ className }: SearchFormProps) {
                           ×
                         </button>
                       )}
-                      <Search className="h-4 w-4 text-[#2e7d32]" />
+                      <Search className="h-4 w-4 text-[#1F8641]" />
                     </div>
 
                     {/* Results */}
@@ -537,9 +537,9 @@ export function SearchForm({ className }: SearchFormProps) {
                                 : "bg-transparent"
                             )}
                           >
-                            {/* Ícono de pin de ubicación ROJO */}
+                            {/* Ícono pin: VERDE seleccionado, GRIS no seleccionado */}
                             <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                              <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                              <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill={isFirstItem ? "#1F8641" : "#D5D5D5"}/>
                             </svg>
 
                             {/* Texto: seleccionado negro, no seleccionado gris */}
@@ -578,7 +578,7 @@ export function SearchForm({ className }: SearchFormProps) {
                           setShowDestinationModal(false);
                           setDestinationSearch(selectedDestination?.displayName || "");
                         }}
-                        className="text-[20px] text-[#c62828]"
+                        className="text-[20px] text-[#1F8641]"
                       >
                         ×
                       </button>
@@ -587,7 +587,7 @@ export function SearchForm({ className }: SearchFormProps) {
                     {/* Search Input */}
                     <div className="flex items-center gap-2 border-b border-[#eee] px-4 py-3">
                       <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                        <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#2e7d32"/>
+                        <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#1F8641"/>
                       </svg>
                       <input
                         ref={modalDestinationInputRef}
@@ -607,7 +607,7 @@ export function SearchForm({ className }: SearchFormProps) {
                           ×
                         </button>
                       )}
-                      <Search className="h-4 w-4 text-[#2e7d32]" />
+                      <Search className="h-4 w-4 text-[#1F8641]" />
                     </div>
 
                     {/* Results */}
@@ -625,9 +625,9 @@ export function SearchForm({ className }: SearchFormProps) {
                                 : "bg-transparent"
                             )}
                           >
-                            {/* Ícono de pin de ubicación ROJO */}
+                            {/* Ícono pin: VERDE seleccionado, GRIS no seleccionado */}
                             <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                              <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                              <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill={isFirstItem ? "#1F8641" : "#D5D5D5"}/>
                             </svg>
 
                             {/* Texto: seleccionado negro, no seleccionado gris */}
@@ -837,9 +837,9 @@ export function SearchForm({ className }: SearchFormProps) {
                                     isFirstItem && !isHighlighted && "bg-[rgba(237,237,237,0.5)]"
                                   )}
                                 >
-                                  {/* Ícono de pin de ubicación ROJO */}
+                                  {/* Ícono pin: VERDE seleccionado, GRIS no seleccionado */}
                                   <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                                    <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                                    <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill={isFirstItem ? "#1F8641" : "#D5D5D5"}/>
                                   </svg>
 
                                   {/* Texto: seleccionado negro, no seleccionado gris */}
@@ -967,9 +967,9 @@ export function SearchForm({ className }: SearchFormProps) {
                                     isFirstItem && !isHighlighted && "bg-[rgba(237,237,237,0.5)]"
                                   )}
                                 >
-                                  {/* Ícono de pin de ubicación ROJO */}
+                                  {/* Ícono pin: VERDE seleccionado, GRIS no seleccionado */}
                                   <svg className="h-4 w-[15px] flex-shrink-0" viewBox="0 0 15 16" fill="none">
-                                    <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill="#DC291E"/>
+                                    <path d="M7.5,1.25 C5.15279,1.25 3.25,3.15279 3.25,5.5 C3.25,8.8125 7.5,13.75 7.5,13.75 C7.5,13.75 11.75,8.8125 11.75,5.5 C11.75,3.15279 9.84721,1.25 7.5,1.25 Z M7.5,7.375 C6.46447,7.375 5.625,6.53553 5.625,5.5 C5.625,4.46447 6.46447,3.625 7.5,3.625 C8.53553,3.625 9.375,4.46447 9.375,5.5 C9.375,6.53553 8.53553,7.375 7.5,7.375 Z" fill={isFirstItem ? "#1F8641" : "#D5D5D5"}/>
                                   </svg>
 
                                   {/* Texto: seleccionado negro, no seleccionado gris */}
