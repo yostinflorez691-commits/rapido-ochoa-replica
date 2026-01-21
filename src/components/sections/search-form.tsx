@@ -528,32 +528,42 @@ export function SearchForm({ className }: SearchFormProps) {
                     </div>
 
                     {/* Results */}
-                    <div className="flex-1 overflow-auto">
+                    <ul className="flex-1 overflow-auto">
                       {filteredOriginTerminals.map((terminal, index) => (
-                        <button
+                        <li
                           key={terminal.id}
-                          type="button"
                           onClick={() => selectOrigin(terminal)}
                           className={cn(
-                            "flex w-full items-start gap-3 border-b border-[#f0f0f0] px-4 py-3.5 text-left transition-colors",
+                            "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors",
                             index === 0
-                              ? "border-l-[3px] border-l-[#4a9c4e] bg-[#f8faf8]"
+                              ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
                               : "border-l-[3px] border-l-transparent hover:bg-[#f5f5f5]"
                           )}
                         >
-                          <span className={cn(
-                            "mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full border-2",
-                            index === 0 ? "border-[#4a9c4e] bg-[#4a9c4e]" : "border-[#4a9c4e] bg-transparent"
-                          )} />
-                          <span className={cn(
-                            "text-[14px]",
-                            index === 0 ? "font-medium text-[#333]" : "text-[#666]"
-                          )}>
-                            {terminal.displayName}
-                          </span>
-                        </button>
+                          {/* Ícono de pin de ubicación verde */}
+                          <svg
+                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                          </svg>
+
+                          {/* Contenido del destino en 3 líneas */}
+                          <div className="flex flex-col">
+                            <span className="text-[15px] font-semibold text-[#333]">
+                              {terminal.city},
+                            </span>
+                            <span className="text-[13px] text-[#666]">
+                              {terminal.department}
+                            </span>
+                            <span className="text-[13px] text-[#666]">
+                              {terminal.terminal}
+                            </span>
+                          </div>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 </motion.div>
               )}
@@ -616,32 +626,42 @@ export function SearchForm({ className }: SearchFormProps) {
                     </div>
 
                     {/* Results */}
-                    <div className="flex-1 overflow-auto">
+                    <ul className="flex-1 overflow-auto">
                       {filteredDestinationTerminals.map((terminal, index) => (
-                        <button
+                        <li
                           key={terminal.id}
-                          type="button"
                           onClick={() => selectDestination(terminal)}
                           className={cn(
-                            "flex w-full items-start gap-3 border-b border-[#f0f0f0] px-4 py-3.5 text-left transition-colors",
+                            "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors",
                             index === 0
-                              ? "border-l-[3px] border-l-[#888] bg-[#f8f8f8]"
+                              ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
                               : "border-l-[3px] border-l-transparent hover:bg-[#f5f5f5]"
                           )}
                         >
-                          <span className={cn(
-                            "mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full border-2",
-                            index === 0 ? "border-[#888] bg-[#888]" : "border-[#999] bg-transparent"
-                          )} />
-                          <span className={cn(
-                            "text-[14px]",
-                            index === 0 ? "font-medium text-[#333]" : "text-[#666]"
-                          )}>
-                            {terminal.displayName}
-                          </span>
-                        </button>
+                          {/* Ícono de pin de ubicación verde */}
+                          <svg
+                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                          </svg>
+
+                          {/* Contenido del destino en 3 líneas */}
+                          <div className="flex flex-col">
+                            <span className="text-[15px] font-semibold text-[#333]">
+                              {terminal.city},
+                            </span>
+                            <span className="text-[13px] text-[#666]">
+                              {terminal.department}
+                            </span>
+                            <span className="text-[13px] text-[#666]">
+                              {terminal.terminal}
+                            </span>
+                          </div>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 </motion.div>
               )}
@@ -823,22 +843,43 @@ export function SearchForm({ className }: SearchFormProps) {
                             <span>Cargando ciudades...</span>
                           </div>
                         ) : (
-                          filteredOriginTerminals.map((terminal, index) => (
-                            <button
-                              key={terminal.id}
-                              type="button"
-                              onClick={() => selectOrigin(terminal)}
-                              className={cn(
-                                "flex w-full items-center gap-3 px-4 py-3.5 text-left transition-colors hover:bg-[#f5f5f5]",
-                                index === originIndex && "bg-[#f0f0f0]"
-                              )}
-                            >
-                              <span className="h-2 w-2 flex-shrink-0 rounded-full bg-[#66ba5b]" />
-                              <span className="text-[15px] text-[#555]">
-                                {terminal.city}, {terminal.department} {terminal.terminal}
-                              </span>
-                            </button>
-                          ))
+                          <ul>
+                            {filteredOriginTerminals.map((terminal, index) => (
+                              <li
+                                key={terminal.id}
+                                onClick={() => selectOrigin(terminal)}
+                                className={cn(
+                                  "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors hover:bg-[#f5f5f5]",
+                                  index === originIndex && "bg-[#f0f0f0]",
+                                  index === 0
+                                    ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
+                                    : "border-l-[3px] border-l-transparent"
+                                )}
+                              >
+                                {/* Ícono de pin de ubicación verde */}
+                                <svg
+                                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                >
+                                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+
+                                {/* Contenido en 3 líneas */}
+                                <div className="flex flex-col">
+                                  <span className="text-[15px] font-semibold text-[#333]">
+                                    {terminal.city},
+                                  </span>
+                                  <span className="text-[13px] text-[#666]">
+                                    {terminal.department}
+                                  </span>
+                                  <span className="text-[13px] text-[#666]">
+                                    {terminal.terminal}
+                                  </span>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
                         )}
                       </div>
                     </motion.div>
@@ -938,22 +979,43 @@ export function SearchForm({ className }: SearchFormProps) {
                             <span>Cargando destinos...</span>
                           </div>
                         ) : (
-                          filteredDestinationTerminals.map((terminal, index) => (
-                            <button
-                              key={terminal.id}
-                              type="button"
-                              onClick={() => selectDestination(terminal)}
-                              className={cn(
-                                "flex w-full items-center gap-3 px-4 py-3.5 text-left transition-colors hover:bg-[#f5f5f5]",
-                                index === destinationIndex && "bg-[#f0f0f0]"
-                              )}
-                            >
-                              <span className="h-2 w-2 flex-shrink-0 rounded-full bg-[#66ba5b]" />
-                              <span className="text-[15px] text-[#555]">
-                                {terminal.city}, {terminal.department} {terminal.terminal}
-                              </span>
-                            </button>
-                          ))
+                          <ul>
+                            {filteredDestinationTerminals.map((terminal, index) => (
+                              <li
+                                key={terminal.id}
+                                onClick={() => selectDestination(terminal)}
+                                className={cn(
+                                  "flex w-full cursor-pointer items-start gap-3 border-b border-[#f0f0f0] px-4 py-3 text-left transition-colors hover:bg-[#f5f5f5]",
+                                  index === destinationIndex && "bg-[#f0f0f0]",
+                                  index === 0
+                                    ? "border-l-[3px] border-l-[#2e7d32] bg-[#f8f8f8]"
+                                    : "border-l-[3px] border-l-transparent"
+                                )}
+                              >
+                                {/* Ícono de pin de ubicación verde */}
+                                <svg
+                                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#2e7d32]"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                >
+                                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+
+                                {/* Contenido en 3 líneas */}
+                                <div className="flex flex-col">
+                                  <span className="text-[15px] font-semibold text-[#333]">
+                                    {terminal.city},
+                                  </span>
+                                  <span className="text-[13px] text-[#666]">
+                                    {terminal.department}
+                                  </span>
+                                  <span className="text-[13px] text-[#666]">
+                                    {terminal.terminal}
+                                  </span>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
                         )}
                       </div>
                     </motion.div>
