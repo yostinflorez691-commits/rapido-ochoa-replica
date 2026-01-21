@@ -410,3 +410,212 @@ nextjs-portal,
 body > [style*="fixed"][style*="bottom"] > div[style*="background-color: rgb(0, 0, 0)"] {
   display: none !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE STYLES - MOBILE FIRST
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Extra small devices (phones, 375px and down) */
+@media only screen and (max-width: 375px) {
+  .mx-auto.w-full {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  h1 {
+    font-size: 16px !important;
+  }
+
+  button[type="submit"] {
+    width: 100% !important;
+    margin-top: 16px !important;
+  }
+}
+
+/* Small devices (phones, 480px and down) */
+@media only screen and (max-width: 480px) {
+  form {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  form > div {
+    width: 100% !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+  header nav {
+    padding: 0 16px !important;
+  }
+}
+
+/* Large devices (tablets, 1080px and down) */
+@media only screen and (min-width: 769px) and (max-width: 1080px) {
+  .mx-auto.w-full.max-w-\[1150px\] {
+    max-width: 95% !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   VIAJES RECIENTES STYLES
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.viajes-recientes {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px dashed var(--color-accent);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  animation: fadeIn 0.3s ease;
+}
+
+.viajes-recientes h3 {
+  color: #2d3436;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viaje-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #dee2e6;
+}
+
+.viaje-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-accent);
+}
+
+.viaje-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transitions for interactive elements */
+button, input, a, .btn {
+  transition: all 0.2s ease !important;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px rgba(31, 134, 65, 0.2) !important;
+  border-color: var(--color-accent) !important;
+}
+
+/* Form animation */
+form {
+  animation: fadeInUp 0.4s ease;
+}
+
+/* List hover effects */
+li:hover, [role="option"]:hover {
+  background: linear-gradient(90deg, #f8f9fa 0%, #fff 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   LOGIN MODAL STYLES
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease;
+}
+
+.modal-content h2 {
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2d3436;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.modal-content input:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}

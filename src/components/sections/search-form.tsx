@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
+import { ViajesRecientes } from "@/components/ui/viajes-recientes";
 import { cn } from "@/lib/utils";
 
 interface SearchFormProps {
@@ -86,6 +87,7 @@ export function SearchForm({ className }: SearchFormProps) {
   const [errors, setErrors] = useState<{ origin?: string; destination?: string }>({});
   const [originIndex, setOriginIndex] = useState(-1);
   const [destinationIndex, setDestinationIndex] = useState(-1);
+  const [showViajesRecientes, setShowViajesRecientes] = useState(true);
 
   // API data state
   const [allTerminals, setAllTerminals] = useState<Terminal[]>([]);
@@ -269,6 +271,34 @@ export function SearchForm({ className }: SearchFormProps) {
     setErrors(prev => ({ ...prev, destination: undefined }));
   };
 
+  // Handler for selecting a viaje reciente
+  const handleSelectViajeReciente = (origen: string, destino: string) => {
+    // Find matching terminals from the list
+    const origenTerminal = allTerminals.find(t =>
+      t.displayName.toLowerCase().includes(origen.split(",")[0].toLowerCase().trim())
+    );
+    const destinoTerminal = allTerminals.find(t =>
+      t.displayName.toLowerCase().includes(destino.split(",")[0].toLowerCase().trim())
+    );
+
+    if (origenTerminal) {
+      setSelectedOrigin(origenTerminal);
+      setOriginSearch(origenTerminal.displayName);
+    } else {
+      setOriginSearch(origen);
+    }
+
+    if (destinoTerminal) {
+      setSelectedDestination(destinoTerminal);
+      setDestinationSearch(destinoTerminal.displayName);
+    } else {
+      setDestinationSearch(destino);
+    }
+
+    setShowViajesRecientes(false);
+    setErrors({});
+  };
+
   // Keyboard navigation for origin dropdown
   const handleOriginKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (!showOriginDropdown && !showOriginModal) return;
@@ -359,6 +389,20 @@ export function SearchForm({ className }: SearchFormProps) {
             Consulta de horarios y compra de tiquetes
           </h1>
         </motion.div>
+
+        {/* Viajes Recientes - Show when no origin selected */}
+        <AnimatePresence>
+          {showViajesRecientes && !selectedOrigin && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mx-auto mb-4 max-w-[1150px]"
+            >
+              <ViajesRecientes onSelectViaje={handleSelectViajeReciente} />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Search Form */}
         <motion.form
