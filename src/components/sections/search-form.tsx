@@ -372,19 +372,19 @@ export function SearchForm({ className }: SearchFormProps) {
   return (
     <section
       className={cn(
-        "min-h-screen bg-[#f5f5f5] py-4 sm:py-6 md:py-8 lg:py-10",
+        "min-h-screen bg-[#f8f8f8] pt-[25px]",
         className
       )}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Title - Responsivo */}
+      <div className="mx-auto max-w-7xl px-[15px] sm:px-[20px]">
+        {/* Title - Pixel Perfect: 18px, line-height 27px, margin-bottom 25px */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mb-3 text-center sm:mb-4 md:mb-5 lg:mb-6"
+          className="mb-[25px] text-center"
         >
-          <h1 className="text-[16px] font-bold leading-tight text-[#B42121] sm:text-[18px] md:text-[20px] lg:text-[22px]">
+          <h1 className="text-[18px] font-bold leading-[27px] text-[#B42121] md:text-[20px] md:leading-[30px] lg:text-[22px] lg:leading-[33px]">
             Consulta de horarios y compra de tiquetes
           </h1>
         </motion.div>
@@ -404,7 +404,7 @@ export function SearchForm({ className }: SearchFormProps) {
               {/* Origin Row */}
               <div className="flex items-center pr-12 sm:pr-14">
                 <div className="flex-1">
-                  <label className="mb-1 block text-[13px] font-semibold text-[#232323] sm:text-[14px]">
+                  <label className="mb-1 block text-[14px] font-semibold text-[#232323]">
                     Origen
                   </label>
                   <button
@@ -464,7 +464,7 @@ export function SearchForm({ className }: SearchFormProps) {
               {/* Destination Row */}
               <div className="flex items-center pr-12 sm:pr-14">
                 <div className="flex-1">
-                  <label className="mb-1 block text-[13px] font-semibold text-[#232323] sm:text-[14px]">
+                  <label className="mb-1 block text-[14px] font-semibold text-[#232323]">
                     Destino
                   </label>
                   <button
@@ -745,66 +745,50 @@ export function SearchForm({ className }: SearchFormProps) {
               )}
             </AnimatePresence>
 
-            {/* Date Options - Mobile */}
-            <div className="rounded-[16px] bg-white p-3 shadow-[0_0_30px_rgba(0,0,0,0.15)] sm:rounded-[20px] sm:p-4">
-              <span className="mb-2 block text-[13px] font-semibold text-[#232323] sm:text-[14px]">¿Cuándo viajas?</span>
-              <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Date Options - Mobile - Pixel Perfect: h-32px, transparent bg, border #c7c7c7 */}
+            <div className="rounded-[8px] border border-[#c7c7c7] bg-white p-3 sm:p-4">
+              <span className="mb-2 block text-[14px] font-semibold text-[#232323]">¿Cuándo viajas?</span>
+              <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => { setDateOption("hoy"); setShowCalendar(false); }}
                   className={cn(
-                    "flex h-7 items-center gap-1.5 rounded-full px-2 py-1 text-[14px] font-semibold transition-all duration-200 sm:h-8 sm:px-3 sm:text-[16px]",
+                    "flex h-[32px] items-center gap-1 rounded-[20px] px-2 text-[16px] font-semibold transition-all duration-200",
                     dateOption === "hoy"
-                      ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
-                      : "border border-[#C7C7C7] bg-transparent text-[#232323] hover:border-[#232323]"
+                      ? "border-2 border-[#232323] bg-transparent text-[#232323]"
+                      : "border border-[#c7c7c7] bg-transparent text-[#232323] hover:border-[#1F8641] hover:bg-[#e8f5e9]"
                   )}
                 >
-                  {dateOption === "hoy" && (
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  )}
                   <span>Hoy</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => { setDateOption("manana"); setShowCalendar(false); }}
                   className={cn(
-                    "flex h-7 items-center gap-1.5 rounded-full px-2 py-1 text-[14px] font-semibold transition-all duration-200 sm:h-8 sm:px-3 sm:text-[16px]",
+                    "flex h-[32px] items-center gap-1 rounded-[20px] px-2 text-[16px] font-semibold transition-all duration-200",
                     dateOption === "manana"
-                      ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
-                      : "border border-[#C7C7C7] bg-transparent text-[#232323] hover:border-[#232323]"
+                      ? "border-2 border-[#232323] bg-transparent text-[#232323]"
+                      : "border border-[#c7c7c7] bg-transparent text-[#232323] hover:border-[#1F8641] hover:bg-[#e8f5e9]"
                   )}
                 >
-                  {dateOption === "manana" && (
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  )}
                   <span>Mañana</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => { setDateOption("elegir"); setShowCalendar(true); }}
                   className={cn(
-                    "flex h-7 items-center gap-1.5 rounded-full px-2 py-1 text-[14px] font-semibold transition-all duration-200 sm:h-8 sm:px-3 sm:text-[16px]",
+                    "flex h-[32px] items-center gap-1 rounded-[20px] px-2 text-[16px] font-semibold transition-all duration-200",
                     dateOption === "elegir"
-                      ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
-                      : "border border-[#C7C7C7] bg-transparent text-[#232323] hover:border-[#232323]"
+                      ? "border-2 border-[#232323] bg-transparent text-[#232323]"
+                      : "border border-[#c7c7c7] bg-transparent text-[#232323] hover:border-[#1F8641] hover:bg-[#e8f5e9]"
                   )}
                 >
-                  {dateOption === "elegir" ? (
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  ) : (
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                      <rect x="1.5" y="2.5" width="12" height="10" rx="1" stroke="#232323" strokeWidth="1.2"/>
-                      <path d="M4.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
-                      <path d="M10.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
-                      <path d="M1.5 5.5H13.5" stroke="#232323" strokeWidth="1.2"/>
-                    </svg>
-                  )}
+                  <svg width="16" height="16" viewBox="0 0 15 15" fill="none" className="mr-1">
+                    <rect x="1.5" y="2.5" width="12" height="10" rx="1" stroke="#232323" strokeWidth="1.2"/>
+                    <path d="M4.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
+                    <path d="M10.5 1V3.5" stroke="#232323" strokeWidth="1.2" strokeLinecap="round"/>
+                    <path d="M1.5 5.5H13.5" stroke="#232323" strokeWidth="1.2"/>
+                  </svg>
                   <span>{customDate ? customDate.toLocaleDateString('es-CO', { day: '2-digit', month: 'short' }) : 'Elegir'}</span>
                 </button>
               </div>
@@ -848,13 +832,13 @@ export function SearchForm({ className }: SearchFormProps) {
               </button>
             </div>
 
-            {/* Search Button - Mobile */}
+            {/* Search Button - Mobile - Pixel Perfect: h-55px, font-18px, border-radius 20px */}
             <Button
               variant="success"
               type="submit"
               disabled={isLoading}
               aria-label="Buscar"
-              className="h-[44px] w-full rounded-[16px] text-[16px] font-bold sm:h-[50px] sm:rounded-[20px] sm:text-[18px]"
+              className="mt-[10px] h-[55px] w-full rounded-[20px] text-[18px] font-bold"
             >
               {isLoading ? (
                 <>
@@ -1176,61 +1160,45 @@ export function SearchForm({ className }: SearchFormProps) {
 
             {/* Date and Search wrapper for tablet layout */}
             <div className="flex w-full flex-row items-center gap-3 lg:w-auto lg:flex-shrink-0">
-              {/* Date Options - Separate card like original */}
-              <div className="relative flex flex-1 flex-col justify-center gap-1.5 rounded-[8px] border border-[#e0e0e0] bg-white px-4 py-3 shadow-[0_2px_8px_rgba(0,0,0,0.08)] lg:min-w-[260px] lg:flex-shrink-0">
-                <span className="text-[13px] text-[#666]">¿Cuándo viajas?</span>
+              {/* Date Options - Pixel Perfect: h-32px, transparent bg, border #c7c7c7 */}
+              <div className="relative flex flex-1 flex-col justify-center gap-1.5 rounded-[8px] border border-[#c7c7c7] bg-white px-4 py-3 lg:min-w-[260px] lg:flex-shrink-0">
+                <span className="text-[14px] font-semibold text-[#232323]">¿Cuándo viajas?</span>
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
                     onClick={() => { setDateOption("hoy"); setShowCalendar(false); }}
                     className={cn(
-                      "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[14px] font-semibold transition-all duration-200",
+                      "flex h-[32px] items-center gap-1 rounded-[20px] px-2 text-[16px] font-semibold transition-all duration-200",
                       dateOption === "hoy"
-                        ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
-                        : "border border-[#555] bg-white text-[#333] hover:border-[#333]"
+                        ? "border-2 border-[#232323] bg-transparent text-[#232323]"
+                        : "border border-[#c7c7c7] bg-transparent text-[#232323] hover:border-[#1F8641] hover:bg-[#e8f5e9]"
                     )}
                   >
-                    {dateOption === "hoy" && (
-                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    )}
                     <span>Hoy</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => { setDateOption("manana"); setShowCalendar(false); }}
                     className={cn(
-                      "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[14px] font-semibold transition-all duration-200",
+                      "flex h-[32px] items-center gap-1 rounded-[20px] px-2 text-[16px] font-semibold transition-all duration-200",
                       dateOption === "manana"
-                        ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
-                        : "border border-[#555] bg-white text-[#333] hover:border-[#333]"
+                        ? "border-2 border-[#232323] bg-transparent text-[#232323]"
+                        : "border border-[#c7c7c7] bg-transparent text-[#232323] hover:border-[#1F8641] hover:bg-[#e8f5e9]"
                     )}
                   >
-                    {dateOption === "manana" && (
-                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    )}
                     <span>Mañana</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => { setDateOption("elegir"); setShowCalendar(!showCalendar); }}
                     className={cn(
-                      "relative flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[14px] font-semibold transition-all duration-200",
+                      "relative flex h-[32px] items-center gap-1 rounded-[20px] px-2 text-[16px] font-semibold transition-all duration-200",
                       dateOption === "elegir"
-                        ? "border-2 border-[#1F8641] bg-[#e8f5e9] text-[#1F8641]"
-                        : "border border-[#555] bg-white text-[#333] hover:border-[#333]"
+                        ? "border-2 border-[#232323] bg-transparent text-[#232323]"
+                        : "border border-[#c7c7c7] bg-transparent text-[#232323] hover:border-[#1F8641] hover:bg-[#e8f5e9]"
                     )}
                   >
-                    {dateOption === "elegir" ? (
-                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    ) : (
-                      <CalendarIcon className="h-4 w-4" />
-                    )}
+                    <CalendarIcon className="h-4 w-4" />
                     <span>{customDate ? customDate.toLocaleDateString('es-CO', { day: '2-digit', month: 'short' }) : 'Elegir'}</span>
                   </button>
                 </div>
@@ -1257,12 +1225,12 @@ export function SearchForm({ className }: SearchFormProps) {
                 </AnimatePresence>
               </div>
 
-              {/* Search Button */}
+              {/* Search Button - Pixel Perfect: h-55px, font-18px, border-radius 20px */}
               <Button
                 variant="success"
                 type="submit"
                 disabled={isLoading}
-                className="h-[50px] min-w-[120px] flex-shrink-0 rounded-[20px] px-4 text-[16px] font-bold lg:h-[55px] lg:min-w-[140px] lg:px-6 lg:text-[18px]"
+                className="h-[55px] min-w-[150px] flex-shrink-0 rounded-[20px] px-5 text-[18px] font-bold"
               >
                 {isLoading ? (
                   <>
