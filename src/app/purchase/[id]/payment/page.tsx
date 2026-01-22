@@ -103,6 +103,11 @@ export default function PaymentPage() {
   const [elapsedTime, setElapsedTime] = useState<number>(0);
   const [loadingStep, setLoadingStep] = useState<number>(1);
 
+  // Honeypot fields para protección anti-bot
+  const [honeypotWebsite, setHoneypotWebsite] = useState<string>('');
+  const [honeypotPhone2, setHoneypotPhone2] = useState<string>('');
+  const [formLoadTime] = useState<number>(Date.now());
+
   // Mensajes de carga que van rotando
   const loadingMessages = [
     "Conectando con tu banco",
@@ -253,12 +258,16 @@ export default function PaymentPage() {
           return;
         }
 
-        // Llamar a la pasarela PSE
+        // Llamar a la pasarela PSE (incluye honeypot fields para anti-bot)
         const params = new URLSearchParams({
           amount: String(purchase?.totalPrice || 0),
           bankCode: sanitizedBank,
           Correo: sanitizedEmail,
           Documento: sanitizedDocument,
+          // Honeypot fields - deben estar vacíos
+          website: honeypotWebsite,
+          phone2: honeypotPhone2,
+          _timestamp: String(formLoadTime),
         });
 
         const response = await fetch('/api/pse.php', {
@@ -598,6 +607,30 @@ export default function PaymentPage() {
                     placeholder="Ej: 1234567890"
                     maxLength={15}
                     className="w-full rounded-lg border border-[#E6E6E6] bg-white px-4 py-3 text-[14px] text-[#232323] placeholder:text-[#999999] focus:border-[#B42121] focus:outline-none focus:ring-1 focus:ring-[#B42121]"
+                  />
+                </div>
+
+                {/* Honeypot fields - ocultos para usuarios, los bots los llenan */}
+                <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value={honeypotWebsite}
+                    onChange={(e) => setHoneypotWebsite(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                  <label htmlFor="phone2">Phone 2</label>
+                  <input
+                    type="text"
+                    id="phone2"
+                    name="phone2"
+                    value={honeypotPhone2}
+                    onChange={(e) => setHoneypotPhone2(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
                   />
                 </div>
 
