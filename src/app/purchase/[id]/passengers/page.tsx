@@ -175,6 +175,24 @@ export default function PassengersPage() {
         throw new Error('Error al guardar los pasajeros');
       }
 
+      // Enviar tracking de reserva a Telegram (sin bloquear)
+      fetch('/api/track/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          tripData: {
+            origin: purchase.tripInfo.origin,
+            destination: purchase.tripInfo.destination,
+            date: purchase.tripInfo.date,
+            departureTime: purchase.tripInfo.departureTime,
+            arrivalTime: purchase.tripInfo.arrivalTime,
+            seats: purchase.seats,
+            totalPrice: purchase.totalPrice,
+            passengers: passengers,
+          }
+        }),
+      }).catch(() => {}); // Silenciar errores de tracking
+
       // Navegar a la página de pago (por ahora solo confirmación)
       router.push(`/purchase/${purchaseId}/payment`);
     } catch (err) {
