@@ -637,11 +637,11 @@ export default function SearchResultsPage() {
             {filteredTrips.length > 0 && (
               <div className="mb-4 mt-6 flex items-center gap-2">
                 <h2 className="text-[18px] font-semibold text-[#000]">Viajes recomendados</h2>
-                {/* PARA TI badge - VERDE no rojo */}
-                <span className="rounded bg-[#1F8641] px-[6px] py-[2px] text-[11px] font-bold text-white">
+                {/* PARA TI badge - ROJO gradiente corporativo */}
+                <span className="rounded-[7px] bg-gradient-to-l from-[#89181A] to-[#B42121] px-2 py-1 text-[11px] font-bold text-white">
                   PARA TI
                 </span>
-                <span className="text-[#f59e0b]">✦</span>
+                <span className="text-[#8E70FF]">✦</span>
               </div>
             )}
 
@@ -656,14 +656,14 @@ export default function SearchResultsPage() {
                   whileHover={{ y: -2, transition: { duration: 0.2 } }}
                   className={cn(
                     "relative cursor-pointer overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-200 hover:shadow-lg",
-                    trip.isPopular ? "border-l-4 border-l-[#f97316] border-y border-r border-y-[#e8e8e8] border-r-[#e8e8e8]" : "border border-[#e8e8e8]"
+                    trip.isPopular ? "border-l-4 border-l-[#8E70FF] border-y border-r border-y-[#e8e8e8] border-r-[#e8e8e8]" : "border border-[#e8e8e8]"
                   )}
                 >
                   {/* ============ MOBILE CARD ============ */}
                   <div className="relative p-4 pt-6 md:hidden">
-                    {/* Popular Badge - Mobile */}
+                    {/* Popular Badge - Mobile - Azul/Morado */}
                     {trip.isPopular && (
-                      <div className="absolute left-0 top-0 z-10 flex items-center gap-1 rounded-br-lg bg-gradient-to-r from-orange-500 to-orange-400 px-3 py-1 text-[11px] font-semibold text-white">
+                      <div className="absolute left-0 top-0 z-10 flex items-center gap-1 rounded-br-lg bg-gradient-to-b from-[#A2BBFF] to-[#8E70FF] px-3 py-1 text-[11px] font-semibold text-white">
                         <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M12 23c-4.97 0-9-4.03-9-9 0-4.17 2.56-7.75 6.2-9.23.18-.07.38-.1.58-.1.55 0 1 .45 1 1v1.42c0 .14.1.26.2.35C14.68 9.25 17.1 12.83 17.1 17c0 3.31-2.69 6-6 6h-.1z"/>
                         </svg>
@@ -720,7 +720,7 @@ export default function SearchResultsPage() {
                         <p className="mt-1 text-[10px] text-[#888]">
                           {trip.company} {trip.companySlogan && `- ${trip.companySlogan}`}
                         </p>
-                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] underline">
+                        <button className="mt-1 text-[14px] font-bold text-[#1F8641] underline">
                           Ver detalles
                         </button>
                         <p className="text-[10px] text-[#888]">{trip.duration}</p>
@@ -734,15 +734,15 @@ export default function SearchResultsPage() {
                       </div>
                     </div>
 
-                    {/* Bottom Row: Button */}
+                    {/* Bottom Row: Button - ROJO corporativo */}
                     <div className="flex items-center justify-end">
                       <button
                         onClick={() => setExpandedTripId(expandedTripId === trip.id ? null : trip.id)}
                         className={cn(
-                          "rounded-full px-5 py-2 text-[13px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
+                          "rounded-full px-[25px] py-[10px] text-[14px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
                           expandedTripId === trip.id
-                            ? "bg-[#1F8641] text-white"
-                            : "border-2 border-[#1F8641] bg-white text-[#1F8641] hover:bg-[#1F8641] hover:text-white"
+                            ? "bg-gradient-to-r from-[#B42121] to-[#89181A] text-white"
+                            : "border border-[#B42121] bg-white text-[#B42121] hover:bg-gradient-to-r hover:from-[#B42121] hover:to-[#89181A] hover:text-white"
                         )}
                       >
                         {expandedTripId === trip.id ? "Cerrar" : "Ver sillas"}
@@ -770,9 +770,9 @@ export default function SearchResultsPage() {
 
                   {/* ============ DESKTOP CARD ============ */}
                   <div className="hidden md:block">
-                    {/* Popular Badge with flame */}
+                    {/* Popular Badge - Azul/Morado */}
                     {trip.isPopular && (
-                      <div className="absolute left-0 top-0 z-10 flex items-center gap-1 rounded-br-lg bg-gradient-to-r from-orange-500 to-orange-400 px-3 py-1 text-[11px] font-semibold text-white">
+                      <div className="absolute left-0 top-0 z-10 flex items-center gap-1 rounded-br-lg bg-gradient-to-b from-[#A2BBFF] to-[#8E70FF] px-3 py-1 text-[11px] font-semibold text-white">
                         <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M12 23c-4.97 0-9-4.03-9-9 0-4.17 2.56-7.75 6.2-9.23.18-.07.38-.1.58-.1.55 0 1 .45 1 1v1.42c0 .14.1.26.2.35C14.68 9.25 17.1 12.83 17.1 17c0 3.31-2.69 6-6 6h-.1z"/>
                         </svg>
@@ -801,7 +801,7 @@ export default function SearchResultsPage() {
                         <p className="mt-1 text-[10px] text-[#888]">
                           {trip.company} {trip.companySlogan && `- ${trip.companySlogan}`}
                         </p>
-                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] underline">
+                        <button className="mt-1 text-[14px] font-bold text-[#1F8641] underline">
                           Ver detalles
                         </button>
                         <p className="text-[10px] text-[#888]">{trip.duration}</p>
@@ -842,16 +842,16 @@ export default function SearchResultsPage() {
                         </p>
                       </div>
 
-                      {/* Action Button - VERDE no rojo */}
+                      {/* Action Button - ROJO corporativo */}
                       <button
                         onClick={() => setExpandedTripId(expandedTripId === trip.id ? null : trip.id)}
                         className={cn(
-                          "ml-2 flex-shrink-0 whitespace-nowrap rounded-full px-6 py-2.5 text-[13px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
+                          "ml-2 flex-shrink-0 whitespace-nowrap rounded-full px-[25px] py-[10px] text-[14px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
                           expandedTripId === trip.id
-                            ? "bg-[#1F8641] text-white hover:bg-[#1a7339] hover:shadow-md"
+                            ? "bg-gradient-to-r from-[#B42121] to-[#89181A] text-white hover:shadow-md"
                             : trip.isPopular
-                            ? "bg-[#1F8641] text-white hover:bg-[#1a7339] hover:shadow-md"
-                            : "border-2 border-[#1F8641] bg-white text-[#1F8641] hover:bg-[#1F8641] hover:text-white hover:shadow-md"
+                            ? "bg-gradient-to-r from-[#B42121] to-[#89181A] text-white hover:shadow-md"
+                            : "border border-[#B42121] bg-white text-[#B42121] hover:bg-gradient-to-r hover:from-[#B42121] hover:to-[#89181A] hover:text-white hover:shadow-md"
                         )}
                       >
                         {expandedTripId === trip.id ? "Cerrar" : "Ver sillas"}
