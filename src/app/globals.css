@@ -535,6 +535,27 @@ body > [style*="fixed"][style*="bottom"] > div[style*="background-color: rgb(0, 
   }
 }
 
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 /* Smooth transitions for interactive elements */
 button, input, a, .btn {
   transition: all 0.2s ease !important;
