@@ -507,10 +507,10 @@ export default function SearchResultsPage() {
               <button
                 onClick={() => setTimeFilter(timeFilter === 'manana' ? null : 'manana')}
                 className={cn(
-                  "flex-shrink-0 rounded-[10px] px-3 py-2 text-[13px] font-medium",
+                  "flex h-[39px] flex-shrink-0 items-center rounded-[10px] px-4 text-[13px] font-medium",
                   timeFilter === 'manana'
-                    ? "bg-gray-200 text-gray-800"
-                    : "bg-gray-100 text-gray-700"
+                    ? "bg-[rgba(155,155,155,0.25)] text-gray-800"
+                    : "bg-[rgba(155,155,155,0.1)] text-gray-700"
                 )}
               >
                 Mañana
@@ -518,10 +518,10 @@ export default function SearchResultsPage() {
               <button
                 onClick={() => setTimeFilter(timeFilter === 'tarde' ? null : 'tarde')}
                 className={cn(
-                  "flex-shrink-0 rounded-[10px] px-3 py-2 text-[13px] font-medium",
+                  "flex h-[39px] flex-shrink-0 items-center rounded-[10px] px-4 text-[13px] font-medium",
                   timeFilter === 'tarde'
-                    ? "bg-gray-200 text-gray-800"
-                    : "bg-gray-100 text-gray-700"
+                    ? "bg-[rgba(155,155,155,0.25)] text-gray-800"
+                    : "bg-[rgba(155,155,155,0.1)] text-gray-700"
                 )}
               >
                 Tarde
@@ -529,10 +529,10 @@ export default function SearchResultsPage() {
               <button
                 onClick={() => setTimeFilter(timeFilter === 'noche' ? null : 'noche')}
                 className={cn(
-                  "flex-shrink-0 rounded-[10px] px-3 py-2 text-[13px] font-medium",
+                  "flex h-[39px] flex-shrink-0 items-center rounded-[10px] px-4 text-[13px] font-medium",
                   timeFilter === 'noche'
-                    ? "bg-gray-200 text-gray-800"
-                    : "bg-gray-100 text-gray-700"
+                    ? "bg-[rgba(155,155,155,0.25)] text-gray-800"
+                    : "bg-[rgba(155,155,155,0.1)] text-gray-700"
                 )}
               >
                 Noche
@@ -581,10 +581,10 @@ export default function SearchResultsPage() {
                 <button
                   onClick={() => setTimeFilter(timeFilter === 'manana' ? null : 'manana')}
                   className={cn(
-                    "rounded-[10px] px-3 py-2 text-[13px] font-medium transition-colors",
+                    "flex h-[39px] items-center rounded-[10px] px-4 text-[13px] font-medium transition-colors",
                     timeFilter === 'manana'
-                      ? "bg-gray-200 text-gray-800"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      ? "bg-[rgba(155,155,155,0.25)] text-gray-800"
+                      : "bg-[rgba(155,155,155,0.1)] text-gray-700 hover:bg-[rgba(155,155,155,0.2)]"
                   )}
                 >
                   Mañana
@@ -592,10 +592,10 @@ export default function SearchResultsPage() {
                 <button
                   onClick={() => setTimeFilter(timeFilter === 'tarde' ? null : 'tarde')}
                   className={cn(
-                    "rounded-[10px] px-3 py-2 text-[13px] font-medium transition-colors",
+                    "flex h-[39px] items-center rounded-[10px] px-4 text-[13px] font-medium transition-colors",
                     timeFilter === 'tarde'
-                      ? "bg-gray-200 text-gray-800"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      ? "bg-[rgba(155,155,155,0.25)] text-gray-800"
+                      : "bg-[rgba(155,155,155,0.1)] text-gray-700 hover:bg-[rgba(155,155,155,0.2)]"
                   )}
                 >
                   Tarde
@@ -603,10 +603,10 @@ export default function SearchResultsPage() {
                 <button
                   onClick={() => setTimeFilter(timeFilter === 'noche' ? null : 'noche')}
                   className={cn(
-                    "rounded-[10px] px-3 py-2 text-[13px] font-medium transition-colors",
+                    "flex h-[39px] items-center rounded-[10px] px-4 text-[13px] font-medium transition-colors",
                     timeFilter === 'noche'
-                      ? "bg-gray-200 text-gray-800"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      ? "bg-[rgba(155,155,155,0.25)] text-gray-800"
+                      : "bg-[rgba(155,155,155,0.1)] text-gray-700 hover:bg-[rgba(155,155,155,0.2)]"
                   )}
                 >
                   Noche
@@ -633,11 +633,12 @@ export default function SearchResultsPage() {
           </div>
         ) : (
           <>
-            {/* Recommended Section Header */}
+            {/* Recommended Section Header - Pixel Perfect */}
             {filteredTrips.length > 0 && (
               <div className="mb-4 mt-6 flex items-center gap-2">
-                <h2 className="text-[15px] font-semibold text-[#333]">Viajes recomendados</h2>
-                <span className="rounded bg-[#B42121] px-2 py-0.5 text-[10px] font-bold text-white">
+                <h2 className="text-[18px] font-semibold text-[#000]">Viajes recomendados</h2>
+                {/* PARA TI badge - VERDE no rojo */}
+                <span className="rounded bg-[#1F8641] px-[6px] py-[2px] text-[11px] font-bold text-white">
                   PARA TI
                 </span>
                 <span className="text-[#f59e0b]">✦</span>
@@ -680,7 +681,7 @@ export default function SearchResultsPage() {
                         {/* Departure */}
                         <div>
                           <p className="text-[18px] font-bold text-[#333]">{trip.departureTime}</p>
-                          <p className="text-[11px] text-[#888]">{trip.originTerminal}</p>
+                          <p className="text-[11px] text-[#232323]">{trip.originTerminal}</p>
                         </div>
                       </div>
 
@@ -693,7 +694,7 @@ export default function SearchResultsPage() {
                       {/* Arrival */}
                       <div className="text-right">
                         <p className="text-[18px] font-bold text-[#333]">{trip.arrivalTime}</p>
-                        <p className="text-[11px] text-[#888]">{trip.destinationTerminal}</p>
+                        <p className="text-[11px] text-[#232323]">{trip.destinationTerminal}</p>
                       </div>
                     </div>
 
@@ -719,7 +720,7 @@ export default function SearchResultsPage() {
                         <p className="mt-1 text-[10px] text-[#888]">
                           {trip.company} {trip.companySlogan && `- ${trip.companySlogan}`}
                         </p>
-                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] hover:underline">
+                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] underline">
                           Ver detalles
                         </button>
                         <p className="text-[10px] text-[#888]">{trip.duration}</p>
@@ -740,8 +741,8 @@ export default function SearchResultsPage() {
                         className={cn(
                           "rounded-full px-5 py-2 text-[13px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
                           expandedTripId === trip.id
-                            ? "bg-[#B42121] text-white"
-                            : "border-2 border-[#B42121] bg-white text-[#B42121] hover:bg-[#B42121] hover:text-white"
+                            ? "bg-[#1F8641] text-white"
+                            : "border-2 border-[#1F8641] bg-white text-[#1F8641] hover:bg-[#1F8641] hover:text-white"
                         )}
                       >
                         {expandedTripId === trip.id ? "Cerrar" : "Ver sillas"}
@@ -800,7 +801,7 @@ export default function SearchResultsPage() {
                         <p className="mt-1 text-[10px] text-[#888]">
                           {trip.company} {trip.companySlogan && `- ${trip.companySlogan}`}
                         </p>
-                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] hover:underline">
+                        <button className="mt-1 text-[12px] font-medium text-[#1F8641] underline">
                           Ver detalles
                         </button>
                         <p className="text-[10px] text-[#888]">{trip.duration}</p>
@@ -814,7 +815,7 @@ export default function SearchResultsPage() {
                       {/* Departure */}
                       <div className="w-[170px] flex-shrink-0">
                         <p className="text-[18px] font-bold text-[#333]">{trip.departureTime}</p>
-                        <p className="text-[11px] text-[#888]">{trip.originTerminal}</p>
+                        <p className="text-[11px] text-[#232323]">{trip.originTerminal}</p>
                       </div>
 
                       {/* Route Line */}
@@ -830,7 +831,7 @@ export default function SearchResultsPage() {
                       {/* Arrival */}
                       <div className="w-[170px] flex-shrink-0">
                         <p className="text-[18px] font-bold text-[#333]">{trip.arrivalTime}</p>
-                        <p className="text-[11px] text-[#888]">{trip.destinationTerminal}</p>
+                        <p className="text-[11px] text-[#232323]">{trip.destinationTerminal}</p>
                       </div>
 
                       {/* Price */}
@@ -841,16 +842,16 @@ export default function SearchResultsPage() {
                         </p>
                       </div>
 
-                      {/* Action Button */}
+                      {/* Action Button - VERDE no rojo */}
                       <button
                         onClick={() => setExpandedTripId(expandedTripId === trip.id ? null : trip.id)}
                         className={cn(
                           "ml-2 flex-shrink-0 whitespace-nowrap rounded-full px-6 py-2.5 text-[13px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95",
                           expandedTripId === trip.id
-                            ? "bg-[#B42121] text-white hover:bg-[#8a1919] hover:shadow-md"
+                            ? "bg-[#1F8641] text-white hover:bg-[#1a7339] hover:shadow-md"
                             : trip.isPopular
-                            ? "bg-[#B42121] text-white hover:bg-[#8a1919] hover:shadow-md"
-                            : "border-2 border-[#B42121] bg-white text-[#B42121] hover:bg-[#B42121] hover:text-white hover:shadow-md"
+                            ? "bg-[#1F8641] text-white hover:bg-[#1a7339] hover:shadow-md"
+                            : "border-2 border-[#1F8641] bg-white text-[#1F8641] hover:bg-[#1F8641] hover:text-white hover:shadow-md"
                         )}
                       >
                         {expandedTripId === trip.id ? "Cerrar" : "Ver sillas"}
